@@ -5,7 +5,7 @@ const money = (n) => '$' + n.toFixed(2);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const say = (msg) => { $('status').textContent = msg; };
 
-const { products } = await (await fetch('/api/products')).json();
+const { products } = await (await fetch('products.json')).json();
 const byId = new Map(products.map((p) => [p.id, p]));
 let cart = {};
 try { cart = JSON.parse(localStorage.getItem('greenbasket-cart') || '{}'); } catch {}

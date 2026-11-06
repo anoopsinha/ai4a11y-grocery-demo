@@ -11,7 +11,7 @@ const PORT = Number(process.env.PORT) || 5175;
 
 createServer(async (req, res) => {
   const url = new URL(req.url, 'http://x').pathname;
-  const file = url === '/api/products' ? path.join(root, 'data/products.json')
+  const file = url === '/products.json' || url === '/api/products' ? path.join(root, 'data/products.json')
     : path.join(root, 'public', path.normalize(url === '/' ? '/index.html' : url).replace(/^(\.\.[/\\])+/, ''));
   if (!file.startsWith(root)) { res.writeHead(403).end(); return; }
   try {

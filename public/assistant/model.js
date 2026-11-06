@@ -32,7 +32,7 @@ Rules: pick the intent that does what the person asked, never more. "Do you have
 The person's current needs: ${JSON.stringify(current || [])}
 
 <<<DATA
-PRODUCTS (id|name|brand|size|price|stock|aisle):
+PRODUCTS (id|name|brand|size|price|stock|aisle|allergens as the label lists them; "not listed" means unknown, not none):
 ${ctx.products.join('\n')}
 
 MEALS (name (when): ingredients):

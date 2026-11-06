@@ -334,7 +334,7 @@ export function createBrain({ store, profile = null, model = null, speech = null
   // What the model sees: the shelves, the meals and the cart, as data.
   function context() {
     return {
-      products: store.products.map((p) => `${p.id}|${p.name}|${p.brand || ''}|${p.size || p.quantity || ''}|${p.price}|${p.stock === 0 ? 'out' : 'in'}|${p.category}`),
+      products: store.products.map((p) => `${p.id}|${p.name}|${p.brand || ''}|${p.size || p.quantity || ''}|${p.price}|${p.stock === 0 ? 'out' : 'in'}|${p.category}|${(p.allergens || []).join(' ') || (p.source === 'counter' ? 'none' : 'not listed')}`),
       meals: meals().map((r) => `${r.name} (${r.meal}): ${Object.keys(r.ingredients).join(', ')}`),
       cart: cartLines().map(({ p, qty }) => `${qty} x ${p.name}`),
     };

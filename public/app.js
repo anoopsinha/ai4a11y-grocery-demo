@@ -13,10 +13,18 @@ const save = () => { try { localStorage.setItem('greenbasket-cart', JSON.stringi
 
 for (const c of [...new Set(products.map((p) => p.category))]) $('cat').append(new Option(c, c));
 
-// The closest in-stock product in the same aisle, by price.
+// A substitute the way a store picks one: something in stock whose name shares a word
+// ("Roma tomatoes" -> "Diced tomatoes"), from the same aisle if it can; failing that,
+// whatever in the aisle costs about the same. It is a naive rule on purpose.
+const FILLER = new Set(['and', 'with', 'the', 'fresh', 'organic', 'original', 'about', 'style', 'free', 'low', 'whole', 'natural', 'classic']);
+const nameWords = (p) => new Set(p.name.toLowerCase().replace(/[^a-z ]/g, ' ').split(/\s+/)
+  .map((w) => (w.endsWith('oes') ? w.slice(0, -2) : w.replace(/s$/, ''))).filter((w) => w.length > 2 && !FILLER.has(w)));
 function substituteFor(p) {
-  return products.filter((o) => o.category === p.category && o.id !== p.id && o.stock > 0)
-    .sort((a, b) => Math.abs(a.price - p.price) - Math.abs(b.price - p.price))[0] || null;
+  const mine = nameWords(p);
+  const closest = (list) => list.sort((a, b) => Math.abs(a.price - p.price) - Math.abs(b.price - p.price))[0] || null;
+  const inStock = products.filter((o) => o.id !== p.id && o.stock > 0);
+  const alike = inStock.filter((o) => [...nameWords(o)].some((w) => mine.has(w)));
+  return closest(alike.filter((o) => o.category === p.category)) || closest(alike) || closest(inStock.filter((o) => o.category === p.category));
 }
 
 function stockLine(p) {
@@ -42,6 +50,8 @@ function card(p) {
       ${facts ? `<p><strong>Per 100 g:</strong> ${esc(facts)}</p>` : ''}
       ${p.nutriScore ? `<p><strong>Nutri-Score:</strong> ${p.nutriScore}</p>` : ''}
       ${p.labels.length ? `<p><strong>Labels:</strong> ${esc(p.labels.join(', '))}</p>` : ''}
+      ${p.source === 'counter' ? '<p>Sold from the fresh counter. Sizes are approximate.</p>' : ''}
+      ${p.photoCredit ? `<p>Photo: <a href="${esc(p.photoCredit.page)}">${esc(p.photoCredit.by)}, ${esc(p.photoCredit.license)}</a>, Wikimedia Commons. It shows the kind of food, not this exact item.</p>` : ''}
     </details>
     ${p.stock > 0 ? `<button type="button" data-add="${esc(p.id)}">Add to cart<span hidden>: ${esc(p.name)}</span></button>`
       : `<button type="button" class="quiet" data-sub="${esc(p.id)}">Show a substitute</button><p class="sub" hidden></p>`}
@@ -93,7 +103,8 @@ document.addEventListener('click', (e) => {
   else if (d.sub) {
     const s = substituteFor(byId.get(d.sub)), out = b.nextElementSibling;
     out.hidden = false;
-    out.innerHTML = s ? `Closest match: <strong>${esc(s.name)}</strong>, ${money(s.price)}. <button type="button" data-add="${esc(s.id)}">Add it</button>` : 'No substitute in this aisle.';
+    const where = s && s.category !== byId.get(d.sub).category ? `, in ${esc(s.category)}` : '';
+    out.innerHTML = s ? `Closest match: <strong>${esc(s.name)}</strong>${where}, ${money(s.price)}. <button type="button" data-add="${esc(s.id)}">Add it</button>` : 'No substitute in this aisle.';
   }
 });
 $('cart-button').addEventListener('click', () => {

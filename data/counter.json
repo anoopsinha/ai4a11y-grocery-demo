@@ -1,0 +1,965 @@
+{
+ "note": "Built by scripts/build-counter.mjs from scripts/counter-source.txt. Do not edit by hand.",
+ "items": [
+  {
+   "id": "fresh-yellow-onion",
+   "name": "Yellow onion",
+   "category": "Produce",
+   "size": "each, about 8 oz",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.79,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Allium_cepa_%282944502550%29.jpg/330px-Allium_cepa_%282944502550%29.jpg",
+    "by": "Alex Lomas",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Allium_cepa_(2944502550).jpg",
+    "file": "File:Allium cepa (2944502550).jpg"
+   }
+  },
+  {
+   "id": "fresh-red-onion",
+   "name": "Red onion",
+   "category": "Produce",
+   "size": "each, about 8 oz",
+   "amount": 1,
+   "unit": "each",
+   "price": 1.19,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Red_Onion_on_White.JPG/330px-Red_Onion_on_White.JPG",
+    "by": "Colin",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Red_Onion_on_White.JPG",
+    "file": "File:Red Onion on White.JPG"
+   }
+  },
+  {
+   "id": "fresh-garlic",
+   "name": "Garlic",
+   "category": "Produce",
+   "size": "1 head",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.69,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Garlic.JPG/330px-Garlic.JPG",
+    "by": "Challiyan at Malayalam Wikipedia",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Garlic.JPG",
+    "file": "File:Garlic.JPG"
+   }
+  },
+  {
+   "id": "fresh-roma-tomatoes",
+   "name": "Roma tomatoes",
+   "category": "Produce",
+   "size": "1 lb, about 4",
+   "amount": 1,
+   "unit": "lb",
+   "price": 1.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Tomatoes_%28Plum_Roma%29_-_Arlingtin%2C_MA.jpg/330px-Tomatoes_%28Plum_Roma%29_-_Arlingtin%2C_MA.jpg",
+    "by": "Daderot",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tomatoes_(Plum_Roma)_-_Arlingtin,_MA.jpg",
+    "file": "File:Tomatoes (Plum Roma) - Arlingtin, MA.jpg"
+   }
+  },
+  {
+   "id": "fresh-cherry-tomatoes",
+   "name": "Cherry tomatoes",
+   "category": "Produce",
+   "size": "10 oz",
+   "amount": 10,
+   "unit": "oz",
+   "price": 2.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Cherry-Tomatoes-in-Pack.jpg/330px-Cherry-Tomatoes-in-Pack.jpg",
+    "by": "Evan-Amos",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cherry-Tomatoes-in-Pack.jpg",
+    "file": "File:Cherry-Tomatoes-in-Pack.jpg"
+   }
+  },
+  {
+   "id": "fresh-romaine-lettuce",
+   "name": "Romaine lettuce",
+   "category": "Produce",
+   "size": "1 head",
+   "amount": 1,
+   "unit": "each",
+   "price": 1.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Stack_of_romaine_lettuce_heads.jpg/330px-Stack_of_romaine_lettuce_heads.jpg",
+    "by": "Jeffery Martin",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Stack_of_romaine_lettuce_heads.jpg",
+    "file": "File:Stack of romaine lettuce heads.jpg"
+   }
+  },
+  {
+   "id": "fresh-iceberg-lettuce",
+   "name": "Iceberg lettuce",
+   "category": "Produce",
+   "size": "1 head",
+   "amount": 1,
+   "unit": "each",
+   "price": 1.79,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Iceberg_lettuce_%28IJssla_krop%29_bolrot.jpg/330px-Iceberg_lettuce_%28IJssla_krop%29_bolrot.jpg",
+    "by": "Rasbak",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Iceberg_lettuce_(IJssla_krop)_bolrot.jpg",
+    "file": "File:Iceberg lettuce (IJssla krop) bolrot.jpg"
+   }
+  },
+  {
+   "id": "fresh-baby-spinach",
+   "name": "Baby spinach",
+   "category": "Produce",
+   "size": "5 oz",
+   "amount": 5,
+   "unit": "oz",
+   "price": 2.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Liat_Portal_for_Foodie_Disorder_-_Fresh_spinach_leaves.jpg/330px-Liat_Portal_for_Foodie_Disorder_-_Fresh_spinach_leaves.jpg",
+    "by": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Fresh_spinach_leaves.jpg",
+    "file": "File:Liat Portal for Foodie Disorder - Fresh spinach leaves.jpg"
+   }
+  },
+  {
+   "id": "fresh-broccoli-crown",
+   "name": "Broccoli crown",
+   "category": "Produce",
+   "size": "about 12 oz",
+   "amount": 0.75,
+   "unit": "lb",
+   "price": 1.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Liat_Portal_for_Foodie_Disorder_-_Broccoli_from_San_Francisco_farmers_market.jpg/330px-Liat_Portal_for_Foodie_Disorder_-_Broccoli_from_San_Francisco_farmers_market.jpg",
+    "by": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Broccoli_from_San_Francisco_farmers_market.jpg",
+    "file": "File:Liat Portal for Foodie Disorder - Broccoli from San Francisco farmers market.jpg"
+   }
+  },
+  {
+   "id": "fresh-cauliflower",
+   "name": "Cauliflower",
+   "category": "Produce",
+   "size": "1 head",
+   "amount": 1,
+   "unit": "each",
+   "price": 2.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Liat_Portal_for_Foodie_Disorder_-_Cauliflower_from_San_Francisco_farmers_market.jpg/330px-Liat_Portal_for_Foodie_Disorder_-_Cauliflower_from_San_Francisco_farmers_market.jpg",
+    "by": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cauliflower_from_San_Francisco_farmers_market.jpg",
+    "file": "File:Liat Portal for Foodie Disorder - Cauliflower from San Francisco farmers market.jpg"
+   }
+  },
+  {
+   "id": "fresh-carrots",
+   "name": "Carrots",
+   "category": "Produce",
+   "size": "1 lb bag",
+   "amount": 1,
+   "unit": "lb",
+   "price": 1.29,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Bunch_of_Carrot.jpg/330px-Bunch_of_Carrot.jpg",
+    "by": "Dittymathew",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bunch_of_Carrot.jpg",
+    "file": "File:Bunch of Carrot.jpg"
+   }
+  },
+  {
+   "id": "fresh-celery",
+   "name": "Celery",
+   "category": "Produce",
+   "size": "1 bunch",
+   "amount": 1,
+   "unit": "each",
+   "price": 1.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Celery_%281%29.jpg/330px-Celery_%281%29.jpg",
+    "by": "Renee Comet (Photographer)",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Celery_(1).jpg",
+    "file": "File:Celery (1).jpg"
+   }
+  },
+  {
+   "id": "fresh-green-bell-pepper",
+   "name": "Green bell pepper",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Starr-070730-7876-Capsicum_annuum-green_bell_pepper-Foodland_Pukalani-Maui_%2824797127391%29.jpg/330px-Starr-070730-7876-Capsicum_annuum-green_bell_pepper-Foodland_Pukalani-Maui_%2824797127391%29.jpg",
+    "by": "Forest and Kim Starr",
+    "license": "CC BY 3.0 us",
+    "page": "https://commons.wikimedia.org/wiki/File:Starr-070730-7876-Capsicum_annuum-green_bell_pepper-Foodland_Pukalani-Maui_(24797127391).jpg",
+    "file": "File:Starr-070730-7876-Capsicum annuum-green bell pepper-Foodland Pukalani-Maui (24797127391).jpg"
+   }
+  },
+  {
+   "id": "fresh-red-bell-pepper",
+   "name": "Red bell pepper",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 1.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/RedBellPepper.jpg/330px-RedBellPepper.jpg",
+    "by": "Renee Comet (photographer)",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:RedBellPepper.jpg",
+    "file": "File:RedBellPepper.jpg"
+   }
+  },
+  {
+   "id": "fresh-jalapeno-peppers",
+   "name": "Jalapeño peppers",
+   "category": "Produce",
+   "size": "4 oz, about 3",
+   "amount": 4,
+   "unit": "oz",
+   "price": 0.59,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Liat_Portal_for_Foodie_Disorder_-_Jalape%C3%B1o_Peppers.jpg/330px-Liat_Portal_for_Foodie_Disorder_-_Jalape%C3%B1o_Peppers.jpg",
+    "by": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Jalape%C3%B1o_Peppers.jpg",
+    "file": "File:Liat Portal for Foodie Disorder - Jalapeño Peppers.jpg"
+   }
+  },
+  {
+   "id": "fresh-cucumber",
+   "name": "Cucumber",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.89,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Ryerson_Market_cucumbers_on_sale.jpg/330px-Ryerson_Market_cucumbers_on_sale.jpg",
+    "by": "Jason Zhang",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ryerson_Market_cucumbers_on_sale.jpg",
+    "file": "File:Ryerson Market cucumbers on sale.jpg"
+   }
+  },
+  {
+   "id": "fresh-zucchini",
+   "name": "Zucchini",
+   "category": "Produce",
+   "size": "each, about 8 oz",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Cucurbita_pepo_zucchine_and_tondo.jpg/330px-Cucurbita_pepo_zucchine_and_tondo.jpg",
+    "by": "nociveglia from Appennino Emiliano, Italy",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cucurbita_pepo_zucchine_and_tondo.jpg",
+    "file": "File:Cucurbita pepo zucchine and tondo.jpg"
+   }
+  },
+  {
+   "id": "fresh-white-mushrooms",
+   "name": "White mushrooms",
+   "category": "Produce",
+   "size": "8 oz",
+   "amount": 8,
+   "unit": "oz",
+   "price": 2.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Corner_shop_mushrooms_in_Haringey%2C_London%2C_England.jpg/330px-Corner_shop_mushrooms_in_Haringey%2C_London%2C_England.jpg",
+    "by": "Acabashi",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Corner_shop_mushrooms_in_Haringey,_London,_England.jpg",
+    "file": "File:Corner shop mushrooms in Haringey, London, England.jpg"
+   }
+  },
+  {
+   "id": "fresh-russet-potatoes",
+   "name": "Russet potatoes",
+   "category": "Produce",
+   "size": "5 lb bag",
+   "amount": 5,
+   "unit": "lb",
+   "price": 3.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Russet_potato_cultivar_with_sprouts.jpg/330px-Russet_potato_cultivar_with_sprouts.jpg",
+    "by": "ZooFari",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Russet_potato_cultivar_with_sprouts.jpg",
+    "file": "File:Russet potato cultivar with sprouts.jpg"
+   }
+  },
+  {
+   "id": "fresh-sweet-potatoes",
+   "name": "Sweet potatoes",
+   "category": "Produce",
+   "size": "1 lb, about 2",
+   "amount": 1,
+   "unit": "lb",
+   "price": 1.29,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Ipomoea_batatas_006.JPG/330px-Ipomoea_batatas_006.JPG",
+    "by": "Llez",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ipomoea_batatas_006.JPG",
+    "file": "File:Ipomoea batatas 006.JPG"
+   }
+  },
+  {
+   "id": "fresh-corn-on-the-cob",
+   "name": "Corn on the cob",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.69,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Liat_Portal_for_Foodie_Disorder_-_Fresh_Corn_on_the_Cob.jpg/330px-Liat_Portal_for_Foodie_Disorder_-_Fresh_Corn_on_the_Cob.jpg",
+    "by": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Fresh_Corn_on_the_Cob.jpg",
+    "file": "File:Liat Portal for Foodie Disorder - Fresh Corn on the Cob.jpg"
+   }
+  },
+  {
+   "id": "fresh-green-beans",
+   "name": "Green beans",
+   "category": "Produce",
+   "size": "12 oz",
+   "amount": 12,
+   "unit": "oz",
+   "price": 2.79,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Macro_of_Fresh_Green_Beans_Buncis.jpg/330px-Macro_of_Fresh_Green_Beans_Buncis.jpg",
+    "by": "Undeka 11",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Macro_of_Fresh_Green_Beans_Buncis.jpg",
+    "file": "File:Macro of Fresh Green Beans Buncis.jpg"
+   }
+  },
+  {
+   "id": "fresh-asparagus",
+   "name": "Asparagus",
+   "category": "Produce",
+   "size": "1 lb bunch",
+   "amount": 1,
+   "unit": "lb",
+   "price": 3.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Asparagus_%285661403316%29.jpg/330px-Asparagus_%285661403316%29.jpg",
+    "by": "bongo vongo",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Asparagus_(5661403316).jpg",
+    "file": "File:Asparagus (5661403316).jpg"
+   }
+  },
+  {
+   "id": "fresh-green-cabbage",
+   "name": "Green cabbage",
+   "category": "Produce",
+   "size": "1 head, about 2 lb",
+   "amount": 2,
+   "unit": "lb",
+   "price": 1.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Cabbage_in_a_stack.jpg/330px-Cabbage_in_a_stack.jpg",
+    "by": "Jeffery Martin",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cabbage_in_a_stack.jpg",
+    "file": "File:Cabbage in a stack.jpg"
+   }
+  },
+  {
+   "id": "fresh-green-onions",
+   "name": "Green onions",
+   "category": "Produce",
+   "size": "1 bunch",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/HK_SYP_Best_of_Best_Vegetable_Peking_Welsh_onion_Allium_Aug-2012.JPG/330px-HK_SYP_Best_of_Best_Vegetable_Peking_Welsh_onion_Allium_Aug-2012.JPG",
+    "by": "Genmewcaugsa",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:HK_SYP_Best_of_Best_Vegetable_Peking_Welsh_onion_Allium_Aug-2012.JPG",
+    "file": "File:HK SYP Best of Best Vegetable Peking Welsh onion Allium Aug-2012.JPG"
+   }
+  },
+  {
+   "id": "fresh-cilantro",
+   "name": "Cilantro",
+   "category": "Produce",
+   "size": "1 bunch",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Coriander_Leaves.jpg/330px-Coriander_Leaves.jpg",
+    "by": "Rupeshm364",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Coriander_Leaves.jpg",
+    "file": "File:Coriander Leaves.jpg"
+   }
+  },
+  {
+   "id": "fresh-italian-parsley",
+   "name": "Italian parsley",
+   "category": "Produce",
+   "size": "1 bunch",
+   "amount": 1,
+   "unit": "each",
+   "price": 1.29,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Parsley_leaves_%2889358%29.jpg/330px-Parsley_leaves_%2889358%29.jpg",
+    "by": "SarKaLay စာကလေး",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Parsley_leaves_(89358).jpg",
+    "file": "File:Parsley leaves (89358).jpg"
+   }
+  },
+  {
+   "id": "fresh-fresh-basil",
+   "name": "Fresh basil",
+   "category": "Produce",
+   "size": "0.75 oz",
+   "amount": 0.75,
+   "unit": "oz",
+   "price": 2.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Fresh_green_basil_leaves_%2854986224214%29.jpg/330px-Fresh_green_basil_leaves_%2854986224214%29.jpg",
+    "by": "AS Photography from Poland",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Fresh_green_basil_leaves_(54986224214).jpg",
+    "file": "File:Fresh green basil leaves (54986224214).jpg"
+   }
+  },
+  {
+   "id": "fresh-ginger-root",
+   "name": "Ginger root",
+   "category": "Produce",
+   "size": "about 4 oz",
+   "amount": 4,
+   "unit": "oz",
+   "price": 0.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Liat_Portal_for_Foodie_Disorder_-_Fresh_ginger_root_from_San_Francisco_farmers_market.jpg/330px-Liat_Portal_for_Foodie_Disorder_-_Fresh_ginger_root_from_San_Francisco_farmers_market.jpg",
+    "by": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Fresh_ginger_root_from_San_Francisco_farmers_market.jpg",
+    "file": "File:Liat Portal for Foodie Disorder - Fresh ginger root from San Francisco farmers market.jpg"
+   }
+  },
+  {
+   "id": "fresh-avocado",
+   "name": "Avocado",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 1.25,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Avocado_Hass_-_single_and_halved.jpg/330px-Avocado_Hass_-_single_and_halved.jpg",
+    "by": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Avocado_Hass_-_single_and_halved.jpg",
+    "file": "File:Avocado Hass - single and halved.jpg"
+   }
+  },
+  {
+   "id": "fresh-limes",
+   "name": "Limes",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.39,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Lime_-_whole_and_halved.jpg/330px-Lime_-_whole_and_halved.jpg",
+    "by": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Lime_-_whole_and_halved.jpg",
+    "file": "File:Lime - whole and halved.jpg"
+   }
+  },
+  {
+   "id": "fresh-lemons",
+   "name": "Lemons",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.69,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Lemon.jpg/330px-Lemon.jpg",
+    "by": "André Karwath aka Aka",
+    "license": "CC BY-SA 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Lemon.jpg",
+    "file": "File:Lemon.jpg"
+   }
+  },
+  {
+   "id": "fresh-bananas",
+   "name": "Bananas",
+   "category": "Produce",
+   "size": "1 bunch, about 2 lb",
+   "amount": 2,
+   "unit": "lb",
+   "price": 1.19,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Single_bananas_in_a_bunch.jpg/330px-Single_bananas_in_a_bunch.jpg",
+    "by": "Springnuts",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Single_bananas_in_a_bunch.jpg",
+    "file": "File:Single bananas in a bunch.jpg"
+   }
+  },
+  {
+   "id": "fresh-gala-apples",
+   "name": "Gala apples",
+   "category": "Produce",
+   "size": "3 lb bag",
+   "amount": 3,
+   "unit": "lb",
+   "price": 4.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Royal_Gala_apples_-_whole_and_halved.jpg/330px-Royal_Gala_apples_-_whole_and_halved.jpg",
+    "by": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Royal_Gala_apples_-_whole_and_halved.jpg",
+    "file": "File:Royal Gala apples - whole and halved.jpg"
+   }
+  },
+  {
+   "id": "fresh-navel-oranges",
+   "name": "Navel oranges",
+   "category": "Produce",
+   "size": "each",
+   "amount": 1,
+   "unit": "each",
+   "price": 0.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/NAVEL_ORANGE.png/330px-NAVEL_ORANGE.png",
+    "by": "ILikeMangos999",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:NAVEL_ORANGE.png",
+    "file": "File:NAVEL ORANGE.png"
+   }
+  },
+  {
+   "id": "fresh-strawberries",
+   "name": "Strawberries",
+   "category": "Produce",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 3.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Delicious_fresh_strawberries_%284735910403%29.jpg/330px-Delicious_fresh_strawberries_%284735910403%29.jpg",
+    "by": "Sander van der Wel from Netherlands",
+    "license": "CC BY-SA 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Delicious_fresh_strawberries_(4735910403).jpg",
+    "file": "File:Delicious fresh strawberries (4735910403).jpg"
+   }
+  },
+  {
+   "id": "fresh-blueberries",
+   "name": "Blueberries",
+   "category": "Produce",
+   "size": "1 pint, about 12 oz",
+   "amount": 12,
+   "unit": "oz",
+   "price": 4.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Blueberries_at_the_Market_%28Unsplash%29.jpg/330px-Blueberries_at_the_Market_%28Unsplash%29.jpg",
+    "by": "veeterzy veeterzy",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Blueberries_at_the_Market_(Unsplash).jpg",
+    "file": "File:Blueberries at the Market (Unsplash).jpg"
+   }
+  },
+  {
+   "id": "fresh-red-seedless-grapes",
+   "name": "Red seedless grapes",
+   "category": "Produce",
+   "size": "about 2 lb",
+   "amount": 2,
+   "unit": "lb",
+   "price": 4.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Red_grapes_2.jpg/330px-Red_grapes_2.jpg",
+    "by": "ProjectManhattan",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Red_grapes_2.jpg",
+    "file": "File:Red grapes 2.jpg"
+   }
+  },
+  {
+   "id": "fresh-chicken-breasts-boneless-skinless",
+   "name": "Chicken breasts, boneless skinless",
+   "category": "Meat & Seafood",
+   "size": "about 1.5 lb",
+   "amount": 1.5,
+   "unit": "lb",
+   "price": 5.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Raw_chicken_slices.jpg/330px-Raw_chicken_slices.jpg",
+    "by": "kakyusei",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raw_chicken_slices.jpg",
+    "file": "File:Raw chicken slices.jpg"
+   }
+  },
+  {
+   "id": "fresh-chicken-thighs-boneless-skinless",
+   "name": "Chicken thighs, boneless skinless",
+   "category": "Meat & Seafood",
+   "size": "about 1.5 lb",
+   "amount": 1.5,
+   "unit": "lb",
+   "price": 5.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Raw_chicken_thighs.jpg/330px-Raw_chicken_thighs.jpg",
+    "by": "gran",
+    "license": "CC BY 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raw_chicken_thighs.jpg",
+    "file": "File:Raw chicken thighs.jpg"
+   }
+  },
+  {
+   "id": "fresh-chicken-drumsticks",
+   "name": "Chicken drumsticks",
+   "category": "Meat & Seafood",
+   "size": "about 2 lb",
+   "amount": 2,
+   "unit": "lb",
+   "price": 3.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/HK_food_raw_chicken_legs_February_2020_SS2_02.jpg/330px-HK_food_raw_chicken_legs_February_2020_SS2_02.jpg",
+    "by": "Mahea Poonam",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:HK_food_raw_chicken_legs_February_2020_SS2_02.jpg",
+    "file": "File:HK food raw chicken legs February 2020 SS2 02.jpg"
+   }
+  },
+  {
+   "id": "fresh-chicken-tenderloins",
+   "name": "Chicken tenderloins",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 4.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Kycklingfil%C3%A9.jpg/330px-Kycklingfil%C3%A9.jpg",
+    "by": "Dnor",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Kycklingfil%C3%A9.jpg",
+    "file": "File:Kycklingfilé.jpg"
+   }
+  },
+  {
+   "id": "fresh-whole-chicken",
+   "name": "Whole chicken",
+   "category": "Meat & Seafood",
+   "size": "about 4.5 lb",
+   "amount": 4.5,
+   "unit": "lb",
+   "price": 7.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Whole_raw_chicken_-_Japan_Dec_22_2019.jpeg/330px-Whole_raw_chicken_-_Japan_Dec_22_2019.jpeg",
+    "by": "Nesnad",
+    "license": "CC BY 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Whole_raw_chicken_-_Japan_Dec_22_2019.jpeg",
+    "file": "File:Whole raw chicken - Japan Dec 22 2019.jpeg"
+   }
+  },
+  {
+   "id": "fresh-ground-beef-80-lean",
+   "name": "Ground beef, 80% lean",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 5.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Hakket-oksekoed.jpg/330px-Hakket-oksekoed.jpg",
+    "by": "Gajda-13 at Danish Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hakket-oksekoed.jpg",
+    "file": "File:Hakket-oksekoed.jpg"
+   }
+  },
+  {
+   "id": "fresh-ground-beef-93-lean",
+   "name": "Ground beef, 93% lean",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 6.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Hackfleisch-1.jpg/330px-Hackfleisch-1.jpg",
+    "by": "No machine-readable author provided. Rainer Zenz assumed (based on copyright cla",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hackfleisch-1.jpg",
+    "file": "File:Hackfleisch-1.jpg"
+   }
+  },
+  {
+   "id": "fresh-ground-turkey-93-lean",
+   "name": "Ground turkey, 93% lean",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 4.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Hackfleisch-1.jpg/330px-Hackfleisch-1.jpg",
+    "by": "No machine-readable author provided. Rainer Zenz assumed (based on copyright cla",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hackfleisch-1.jpg",
+    "file": "File:Hackfleisch-1.jpg"
+   }
+  },
+  {
+   "id": "fresh-beef-stew-meat",
+   "name": "Beef stew meat",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 7.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Chuck_steaks.jpg/330px-Chuck_steaks.jpg",
+    "by": "pete",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chuck_steaks.jpg",
+    "file": "File:Chuck steaks.jpg"
+   }
+  },
+  {
+   "id": "fresh-sirloin-steak",
+   "name": "Sirloin steak",
+   "category": "Meat & Seafood",
+   "size": "about 1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 9.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/%EB%8C%80%ED%86%B5%EB%A0%B9%EC%83%81%EC%97%90_%EB%B9%9B%EB%82%98%EB%8A%94_%ED%96%89%EC%A3%BC%ED%95%9C%EC%9A%B0.jpg/330px-%EB%8C%80%ED%86%B5%EB%A0%B9%EC%83%81%EC%97%90_%EB%B9%9B%EB%82%98%EB%8A%94_%ED%96%89%EC%A3%BC%ED%95%9C%EC%9A%B0.jpg",
+    "by": "고양축산농협",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:%EB%8C%80%ED%86%B5%EB%A0%B9%EC%83%81%EC%97%90_%EB%B9%9B%EB%82%98%EB%8A%94_%ED%96%89%EC%A3%BC%ED%95%9C%EC%9A%B0.jpg",
+    "file": "File:대통령상에 빛나는 행주한우.jpg"
+   }
+  },
+  {
+   "id": "fresh-beef-chuck-roast",
+   "name": "Beef chuck roast",
+   "category": "Meat & Seafood",
+   "size": "about 3 lb",
+   "amount": 3,
+   "unit": "lb",
+   "price": 17.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/H%C3%B6grev%2C_r%C3%A5.jpg/330px-H%C3%B6grev%2C_r%C3%A5.jpg",
+    "by": "Hangsna",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:H%C3%B6grev,_r%C3%A5.jpg",
+    "file": "File:Högrev, rå.jpg"
+   }
+  },
+  {
+   "id": "fresh-pork-chops-boneless",
+   "name": "Pork chops, boneless",
+   "category": "Meat & Seafood",
+   "size": "about 1.25 lb",
+   "amount": 1.25,
+   "unit": "lb",
+   "price": 5.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/HK_food_ingredient_red_meat_frozen_pork_chop_raw_butt_steak_October_2021_SS2_013.jpg/330px-HK_food_ingredient_red_meat_frozen_pork_chop_raw_butt_steak_October_2021_SS2_013.jpg",
+    "by": "Presixlla MOON",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:HK_food_ingredient_red_meat_frozen_pork_chop_raw_butt_steak_October_2021_SS2_013.jpg",
+    "file": "File:HK food ingredient red meat frozen pork chop raw butt steak October 2021 SS2 013.jpg"
+   }
+  },
+  {
+   "id": "fresh-pork-tenderloin",
+   "name": "Pork tenderloin",
+   "category": "Meat & Seafood",
+   "size": "about 1.25 lb",
+   "amount": 1.25,
+   "unit": "lb",
+   "price": 6.49,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Schweinefilet-1.jpg/330px-Schweinefilet-1.jpg",
+    "by": "Rainer ...",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Schweinefilet-1.jpg",
+    "file": "File:Schweinefilet-1.jpg"
+   }
+  },
+  {
+   "id": "fresh-italian-sausage-mild",
+   "name": "Italian sausage, mild",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 4.99,
+   "allergens": [],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Raw_sausages.jpg/330px-Raw_sausages.jpg",
+    "by": "Unknown",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raw_sausages.jpg",
+    "file": "File:Raw sausages.jpg"
+   }
+  },
+  {
+   "id": "fresh-salmon-fillet",
+   "name": "Salmon fillet",
+   "category": "Meat & Seafood",
+   "size": "about 1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 10.99,
+   "allergens": [
+    "fish"
+   ],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Salmon2.jpg/330px-Salmon2.jpg",
+    "by": "Tiia Monto",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Salmon2.jpg",
+    "file": "File:Salmon2.jpg"
+   }
+  },
+  {
+   "id": "fresh-tilapia-fillets",
+   "name": "Tilapia fillets",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 6.99,
+   "allergens": [
+    "fish"
+   ],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Liat_Portal_for_Foodie_Disorder_-_Raw_Tilapia_Prepared_for_Baking.jpg/330px-Liat_Portal_for_Foodie_Disorder_-_Raw_Tilapia_Prepared_for_Baking.jpg",
+    "by": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Raw_Tilapia_Prepared_for_Baking.jpg",
+    "file": "File:Liat Portal for Foodie Disorder - Raw Tilapia Prepared for Baking.jpg"
+   }
+  },
+  {
+   "id": "fresh-cod-fillet",
+   "name": "Cod fillet",
+   "category": "Meat & Seafood",
+   "size": "about 1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 9.99,
+   "allergens": [
+    "fish"
+   ],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Cod_fillet.jpg/330px-Cod_fillet.jpg",
+    "by": "Tiia Monto",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cod_fillet.jpg",
+    "file": "File:Cod fillet.jpg"
+   }
+  },
+  {
+   "id": "fresh-raw-shrimp-peeled",
+   "name": "Raw shrimp, peeled",
+   "category": "Meat & Seafood",
+   "size": "1 lb",
+   "amount": 1,
+   "unit": "lb",
+   "price": 8.99,
+   "allergens": [
+    "crustaceans"
+   ],
+   "photo": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Frozen_raw_shrimps.jpg/330px-Frozen_raw_shrimps.jpg",
+    "by": "Fumikas Sagisavas",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Frozen_raw_shrimps.jpg",
+    "file": "File:Frozen raw shrimps.jpg"
+   }
+  }
+ ]
+}

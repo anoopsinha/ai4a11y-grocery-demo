@@ -1,0 +1,64 @@
+# The fresh counter, written by hand: loose produce and fresh meat have no
+# barcode. One line each:  name | size as shown | amount | unit | price | photo search | allergens
+# amount and unit give the unit price (price / amount per unit). Prices are made up.
+# scripts/build-counter.mjs turns this into data/counter.json and finds the photos.
+
+[Produce]
+Yellow onion | each, about 8 oz | 1 | each | 0.79 | yellow onion bulb
+Red onion | each, about 8 oz | 1 | each | 1.19 | red onion bulb
+Garlic | 1 head | 1 | each | 0.69 | garlic bulb head
+Roma tomatoes | 1 lb, about 4 | 1 | lb | 1.49 | roma tomatoes
+Cherry tomatoes | 10 oz | 10 | oz | 2.99 | cherry tomatoes
+Romaine lettuce | 1 head | 1 | each | 1.99 | romaine lettuce head
+Iceberg lettuce | 1 head | 1 | each | 1.79 | iceberg lettuce head
+Baby spinach | 5 oz | 5 | oz | 2.99 | spinach leaves fresh
+Broccoli crown | about 12 oz | 0.75 | lb | 1.99 | broccoli head
+Cauliflower | 1 head | 1 | each | 2.99 | cauliflower head
+Carrots | 1 lb bag | 1 | lb | 1.29 | carrots bunch
+Celery | 1 bunch | 1 | each | 1.99 | celery stalks
+Green bell pepper | each | 1 | each | 0.99 | green bell pepper
+Red bell pepper | each | 1 | each | 1.49 | red bell pepper
+Jalapeño peppers | 4 oz, about 3 | 4 | oz | 0.59 | jalapeno peppers green
+Cucumber | each | 1 | each | 0.89 | cucumber vegetable
+Zucchini | each, about 8 oz | 1 | each | 0.99 | courgettes green
+White mushrooms | 8 oz | 8 | oz | 2.49 | white button mushrooms
+Russet potatoes | 5 lb bag | 5 | lb | 3.99 | russet potatoes
+Sweet potatoes | 1 lb, about 2 | 1 | lb | 1.29 | sweet potatoes
+Corn on the cob | each | 1 | each | 0.69 | corn on the cob ear
+Green beans | 12 oz | 12 | oz | 2.79 | green beans fresh
+Asparagus | 1 lb bunch | 1 | lb | 3.99 | asparagus bunch green
+Green cabbage | 1 head, about 2 lb | 2 | lb | 1.99 | green cabbage head
+Green onions | 1 bunch | 1 | each | 0.99 | scallions bunch
+Cilantro | 1 bunch | 1 | each | 0.99 | coriander leaves
+Italian parsley | 1 bunch | 1 | each | 1.29 | parsley leaves
+Fresh basil | 0.75 oz | 0.75 | oz | 2.49 | fresh basil leaves
+Ginger root | about 4 oz | 4 | oz | 0.99 | ginger root fresh
+Avocado | each | 1 | each | 1.25 | avocados halved
+Limes | each | 1 | each | 0.39 | limes fruit green
+Lemons | each | 1 | each | 0.69 | lemons fruit yellow
+Bananas | 1 bunch, about 2 lb | 2 | lb | 1.19 | bananas bunch
+Gala apples | 3 lb bag | 3 | lb | 4.49 | gala apples
+Navel oranges | each | 1 | each | 0.99 | navel oranges
+Strawberries | 1 lb | 1 | lb | 3.99 | strawberries fresh
+Blueberries | 1 pint, about 12 oz | 12 | oz | 4.49 | blueberries fresh
+Red seedless grapes | about 2 lb | 2 | lb | 4.99 | red grapes bunch
+
+[Meat & Seafood]
+Chicken breasts, boneless skinless | about 1.5 lb | 1.5 | lb | 5.99 | raw chicken breast
+Chicken thighs, boneless skinless | about 1.5 lb | 1.5 | lb | 5.49 | raw chicken thighs
+Chicken drumsticks | about 2 lb | 2 | lb | 3.99 | chicken legs raw
+Chicken tenderloins | 1 lb | 1 | lb | 4.99 | raw chicken breast
+Whole chicken | about 4.5 lb | 4.5 | lb | 7.99 | raw whole chicken
+Ground beef, 80% lean | 1 lb | 1 | lb | 5.49 | raw ground beef
+Ground beef, 93% lean | 1 lb | 1 | lb | 6.99 | raw ground beef
+Ground turkey, 93% lean | 1 lb | 1 | lb | 4.99 | minced meat raw
+Beef stew meat | 1 lb | 1 | lb | 7.49 | chuck steak
+Sirloin steak | about 1 lb | 1 | lb | 9.99 | raw sirloin steak
+Beef chuck roast | about 3 lb | 3 | lb | 17.99 | chuck steak
+Pork chops, boneless | about 1.25 lb | 1.25 | lb | 5.99 | raw pork chops
+Pork tenderloin | about 1.25 lb | 1.25 | lb | 6.49 | pork tenderloin
+Italian sausage, mild | 1 lb | 1 | lb | 4.99 | raw sausages
+Salmon fillet | about 1 lb | 1 | lb | 10.99 | raw salmon fillet | fish
+Tilapia fillets | 1 lb | 1 | lb | 6.99 | tilapia fillet raw | fish
+Cod fillet | about 1 lb | 1 | lb | 9.99 | cod fillet raw | fish
+Raw shrimp, peeled | 1 lb | 1 | lb | 8.99 | raw prawns | crustaceans

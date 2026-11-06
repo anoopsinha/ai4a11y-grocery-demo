@@ -10,6 +10,12 @@ chicken alfredo and chicken tacos, with ingredients that several meals share.
 > place to try adaptations, and it does not show that they work on a real
 > store.
 
+## Try it
+
+The store is online at
+[anoopsinha.github.io/ai4a11y-grocery-demo](https://anoopsinha.github.io/ai4a11y-grocery-demo/).
+It is the same page as the local one. Your cart stays in your own browser.
+
 ## Run it
 
 You need Node 20 or later. There is nothing to install.
@@ -93,11 +99,24 @@ npm run counter    # rebuild the fresh counter after editing counter-source.txt
   the number of the picture you want in `data/counter-photos.json`.
 - **A meal:** add it to `data/recipes.json` and run `npm test`.
 
-## Data and photo licences
+## License
 
-- Packaged product data © Open Food Facts contributors, under the
+The code and the hand-written content are licensed under
+[Apache 2.0](LICENSE), like the toolkit. That covers the store page, the
+scripts, the fresh counter list and the meal list.
+
+The licence does not cover the product data or the pictures. They belong to
+others and keep their own terms:
+
+- **Packaged product data** is © Open Food Facts contributors, under the
   [Open Database License](https://opendatacommons.org/licenses/odbl/1-0/).
-  Product pictures are loaded from Open Food Facts and have their own licences.
-- Fresh counter photos are loaded from Wikimedia Commons under Creative
-  Commons or public-domain terms. The photographer, licence and source page of
-  each are in `data/counter.json` and shown in the store.
+  The packaged entries in `data/products.json` are drawn from that database,
+  so they stay under that licence. If you share them, credit Open Food Facts
+  and keep the same licence.
+- **Product pictures** are loaded from Open Food Facts and have their own
+  licences. They are not stored in this repository.
+- **Fresh counter photos** are loaded from Wikimedia Commons under Creative
+  Commons or public-domain terms. The photographer, licence and source page
+  of each are in `data/counter.json` and shown in the store.
+- **Brand and product names** belong to their owners. Greenbasket is a made-up
+  store and is not connected to any of them.

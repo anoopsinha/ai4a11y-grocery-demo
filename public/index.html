@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greenbasket (simulated grocery store)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p class="notice">Simulated store for research. Products are real (Open Food Facts); prices and stock are made up. Nothing can be ordered.</p>
+<header>
+  <h1>Greenbasket</h1>
+  <form id="search-form" role="search">
+    <label for="q">Search products</label>
+    <input id="q" type="search" autocomplete="off">
+    <label for="cat">Aisle</label>
+    <select id="cat"><option value="">All aisles</option></select>
+    <label><input id="instock" type="checkbox"> In stock only</label>
+  </form>
+  <button id="cart-button" type="button" aria-expanded="false" aria-controls="cart">Cart (<span id="cart-count">0</span>)</button>
+</header>
+<p id="status" role="status" aria-live="polite"></p>
+<main>
+  <section aria-labelledby="results-h">
+    <h2 id="results-h">Products</h2>
+    <ul id="products" class="grid"></ul>
+  </section>
+  <aside id="cart" hidden aria-labelledby="cart-h">
+    <h2 id="cart-h">Your cart</h2>
+    <ul id="cart-lines"></ul>
+    <dl id="totals"></dl>
+    <label for="slot">Delivery time</label>
+    <select id="slot">
+      <option>Today, 5 to 7 pm ($5.99)</option>
+      <option>Tomorrow, 9 to 11 am ($3.99)</option>
+      <option>Tomorrow, 5 to 7 pm ($3.99)</option>
+    </select>
+    <button id="checkout" type="button">Place order (simulated)</button>
+    <div id="receipt" tabindex="-1"></div>
+  </aside>
+</main>
+<footer>Product data © Open Food Facts contributors, Open Database License. Prices and stock are simulated.</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

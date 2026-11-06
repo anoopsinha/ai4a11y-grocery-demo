@@ -1,0 +1,9 @@
+{
+  "name": "ai4a11y-grocery-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A simulated grocery store for building AI for Accessibility Toolkit shopping adaptations. Real products from Open Food Facts; simulated prices and stock.",
+  "scripts": { "start": "node server.js", "fetch": "node scripts/fetch-products.mjs" },
+  "engines": { "node": ">=20" }
+}

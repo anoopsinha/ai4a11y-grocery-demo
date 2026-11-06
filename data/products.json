@@ -1,0 +1,1356 @@
+{
+ "source": "Open Food Facts (ODbL). Prices and stock are simulated.",
+ "fetchedAt": "2026-11-06",
+ "products": [
+  {
+   "id": "7300400481588",
+   "name": "Fibres",
+   "brand": "wasa",
+   "category": "Bread",
+   "quantity": "230 g",
+   "image": "https://images.openfoodfacts.org/images/products/730/040/048/1588/front_en.269.200.jpg",
+   "price": 5.61,
+   "unitPrice": {
+    "amount": 2.44,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 31,
+   "ingredients": "whole rye flour (57 g), wheat bran (27 g), oatmeal (13 g), sesame seeds (7.9 g), wheat germ, salt.",
+   "allergens": [
+    "gluten",
+    "sesame seeds"
+   ],
+   "traces": [
+    "lupin",
+    "milk",
+    "mustard",
+    "soybeans"
+   ],
+   "labels": [
+    "vegetarian",
+    "source of fibre",
+    "green dot",
+    "high fibres"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 333,
+    "sugars": 2,
+    "salt": 1.2,
+    "protein": 12
+   }
+  },
+  {
+   "id": "3760049796384",
+   "name": "Tartines céréales & graines 450g",
+   "brand": "La Boulangère",
+   "category": "Bread",
+   "quantity": "450 g",
+   "image": "https://images.openfoodfacts.org/images/products/376/004/979/6384/front_fr.109.200.jpg",
+   "price": 4.98,
+   "unitPrice": {
+    "amount": 1.11,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 31,
+   "ingredients": "Farine de BLÉ *50 %, eau, huile de colza, graines de tournesol décortiquées 4,6 %, graines de millet décortiquées 1,8 %, graines de lin brun 1,8%, semoule de BLÉ dur 1,6 %, levains de BLÉ dévitalisés, sel, arôme naturel (contient alcool), graines de pavot bleu 0,7 %, flocons d'AVOINE 0,7 %, levure, vinaigre, graines de quinoa 0,4 %, graines d'amarante 0,4%, conservateur : propionate de calcium, levure désactivée, gluten de BLÉ , farine de SEIGLE 0,2%, farine d'ORGE maltée torréfiée 0,1%, farine de BLÉ malté torréfié 0,1%, agent de traitement de la farine : acide ascorbique. Traces éventuelles de soja, moutarde et graines de sésame. * Ingrédient issu du commerce équitable français.",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [
+    "eggs",
+    "milk",
+    "mustard",
+    "sesame seeds",
+    "soybeans"
+   ],
+   "labels": [
+    "vegetarian",
+    "fair trade",
+    "made in france",
+    "nutriscore",
+    "nutriscore grade a"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 298,
+    "sugars": 2.9,
+    "salt": 1.1,
+    "protein": 10
+   }
+  },
+  {
+   "id": "5025125000006",
+   "name": "White Ciabattin",
+   "brand": "Jason's Sourdough",
+   "category": "Bread",
+   "quantity": "580 g",
+   "image": "https://images.openfoodfacts.org/images/products/502/512/500/0006/front_en.106.200.jpg",
+   "price": 2.91,
+   "unitPrice": {
+    "amount": 0.5,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 0,
+   "ingredients": "Wheat Flour (Wheat Flour, Calcium Carbonate, Iron, Niacin, Thiamin), Water, Salt, Fermented Wheat Flour.",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [],
+   "labels": [
+    "vegetarian",
+    "vegan",
+    "Great Taste"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 230,
+    "sugars": 2.4,
+    "salt": 0.92,
+    "protein": 10.1
+   }
+  },
+  {
+   "id": "13356194",
+   "name": "SPICY CHICKEN & 'NDUJA PIZZA",
+   "brand": "SPORTYFEEL",
+   "category": "Bread",
+   "quantity": "360g",
+   "image": "https://images.openfoodfacts.org/images/products/000/001/335/6194/front_en.48.200.jpg",
+   "price": 3.46,
+   "unitPrice": {
+    "amount": 0.96,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 47,
+   "ingredients": "Maltodextrin, Sugar, 10% Green Tea Powder, Vegetable Oils (Coconut, Rapeseed), Natural Flavouring.",
+   "allergens": [
+    "eggs",
+    "gluten",
+    "milk"
+   ],
+   "traces": [
+    "sesame seeds"
+   ],
+   "labels": [
+    "vegetarian",
+    "vegan"
+   ],
+   "nutriScore": "D",
+   "per100g": {
+    "kcal": 344,
+    "sugars": 3.4,
+    "salt": 2.9,
+    "protein": 13
+   }
+  },
+  {
+   "id": "3228850006035",
+   "name": "Pain de mie longue conservation",
+   "brand": "Harrys",
+   "category": "Bread",
+   "quantity": "250 g",
+   "image": "https://images.openfoodfacts.org/images/products/322/885/000/6035/front_fr.177.200.jpg",
+   "price": 5.78,
+   "unitPrice": {
+    "amount": 2.31,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 41,
+   "ingredients": "wheat flour 66.5%, water, rapeseed oil, sugar, wheat gluten, yeast, flavoring (contains alcohol), salt, vinegar, preservative: calcium propionate, bean flour, aceerula extract, may contain traces of egg, soy, milk, nuts, sesame seeds,",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [
+    "eggs",
+    "milk",
+    "mustard",
+    "nuts",
+    "sesame seeds",
+    "soybeans"
+   ],
+   "labels": [
+    "no preservatives",
+    "made in france",
+    "no palm oil",
+    "nutriscore",
+    "nutriscore grade b"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 283,
+    "sugars": 6.5,
+    "salt": 1.25,
+    "protein": 9
+   }
+  },
+  {
+   "id": "5025125000129",
+   "name": "JASON'S SOURDOUGH",
+   "brand": "JASON'S SOURDOUGH",
+   "category": "Bread",
+   "quantity": "450 g",
+   "image": "https://images.openfoodfacts.org/images/products/502/512/500/0129/front_en.81.200.jpg",
+   "price": 5.73,
+   "unitPrice": {
+    "amount": 1.27,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 47,
+   "ingredients": "Wheat Flour (Wheat Flour, Calcium Carbonate, Iron, Niacin, Thiamin), Water, Wholemeal Spelt (Wheat) Flour, Sprouted Spelt (Wheat) Grains (5%), Rye Flour, Salt, Fermented Wheat Flour.",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [],
+   "labels": [
+    "no preservatives",
+    "no additives"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 116.666666666667,
+    "sugars": 2.64467952706907,
+    "salt": 0.481098319850653,
+    "protein": 9.33416303671437
+   }
+  },
+  {
+   "id": "0013764027053",
+   "name": "Organic Bread 21 Whole Grains and Seeds",
+   "brand": "Dave's Killer Bread",
+   "category": "Bread",
+   "quantity": "765 g",
+   "image": "https://images.openfoodfacts.org/images/products/001/376/402/7053/front_en.534.200.jpg",
+   "price": 4.48,
+   "unitPrice": {
+    "amount": 0.59,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 29,
+   "ingredients": "organic whole wheat (organic whole wheat flour, organic cracked whole wheat), water, organic cane sugar, organic whole grains and seeds mix (organic whole flax seeds, organic sunflower seeds, organic tri-color quinoa (organic black quinoa, organic red quinoa, organic white quinoa), organic ground whole flax seeds, organic triticale, organic pumpkin seeds, organic rolled barley, organic rolled oats, organic rolled rye, organic blue cornmeal, organic millet, organic yellow cornmeal, organic kamut khorasan wheat, organic sorghum flour, organic buckwheat flour, organic quinoa, organic poppy seeds), organic wheat gluten, organic oat fiber, yeast, organic molasses, sea salt, organic cultured wheat flour, organic vinegar, organic acerola cherry powder, enzymes",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [],
+   "labels": [
+    "organic",
+    "kosher",
+    "no gmos",
+    "usda organic",
+    "non gmo project",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 244,
+    "sugars": 8.88888888888889,
+    "salt": 0.94445,
+    "protein": 13.3333333333333
+   }
+  },
+  {
+   "id": "0013764027138",
+   "name": "THIN-SLICED",
+   "brand": "Dave’s Killer Bread",
+   "category": "Bread",
+   "quantity": "20.5 oz",
+   "image": "https://images.openfoodfacts.org/images/products/001/376/402/7138/front_en.427.200.jpg",
+   "price": 4.48,
+   "unitPrice": {
+    "amount": 0.77,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 39,
+   "ingredients": "organic whole wheat (organic whole wheat flour, organic cracked whole wheat), water, organic cane sugar, organic 21 whole grains and seeds mix (organic whole flax seeds, organic sunflower seeds, organic tri-color quinoa (organic black quinoa, organic red quinoa, organic white quinoa), organic ground whole flax seeds, organic triticale, organic pumpkin seeds, organic rolled barley, organic rolled oats, organic rolled rye, organic blue cornmeal, organic millet, organic rolled spelt, organic brown rice flour, organic amaranth flour, organic yellow cornmeal, organic kamut® khorasan wheat, organic quinoa, organic sorghum flour, organic buckwheat flour, organic poppy seeds), organic oat fiber, organic wheat gluten, contains 2% or less of each of the following: organic molasses, yeast, sea salt, organic cultured wheat flour, organic vinegar, organic acerola cherry powder, enzymes",
+   "allergens": [
+    "gluten",
+    "sesame seeds"
+   ],
+   "traces": [
+    "nuts",
+    "Grains",
+    "Seeds"
+   ],
+   "labels": [
+    "organic",
+    "kosher",
+    "no gmos",
+    "usda organic",
+    "non gmo project",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 214.3,
+    "sugars": 10.7,
+    "salt": 0.94,
+    "protein": 10.7
+   }
+  },
+  {
+   "id": "8710637105390",
+   "name": "Wraps Multigrains",
+   "brand": "Gruma Netherlands B.V.",
+   "category": "Bread",
+   "quantity": "370 g",
+   "image": "https://images.openfoodfacts.org/images/products/871/063/710/5390/front_en.48.200.jpg",
+   "price": 4.73,
+   "unitPrice": {
+    "amount": 1.28,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 49,
+   "ingredients": "wheat flour 66%, water, seed mixture 2.6% (brown flaxseed, golden flaxseed), rapeseed oil, stabilizers (glycerol, guar gum, e466), sugar, fermented wheat, salt, baking powders (e500, e450), acidifier (citric acid), emulsifiers (e471, e472e), natural flavour",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [],
+   "labels": [
+    "vegetarian",
+    "no artificial preservatives",
+    "vegan",
+    "european vegetarian union",
+    "european vegetarian union vegan",
+    "no artificial colors"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 312,
+    "sugars": 1,
+    "salt": 0.92,
+    "protein": 7.3
+   }
+  },
+  {
+   "id": "3228857001491",
+   "name": "Harrys pain de mie extra moelleux complet sans sucres ajoutés 500g",
+   "brand": "Harrys",
+   "category": "Bread",
+   "quantity": "500 g",
+   "image": "https://images.openfoodfacts.org/images/products/322/885/700/1491/front_fr.37.200.jpg",
+   "price": 3.7,
+   "unitPrice": {
+    "amount": 0.74,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 35,
+   "ingredients": "Farine complète de _blé_ (44 %), eau, farine de blé, huile de colza, levure, arôme (contient alcool), sel, vinaigre, gluten de _blé_, extrait d'acérioa",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [
+    "eggs",
+    "gluten",
+    "milk",
+    "nuts",
+    "sesame seeds",
+    "soybeans"
+   ],
+   "labels": [
+    "no palm oil",
+    "nutriscore",
+    "no added sugar",
+    "no additives",
+    "nutriscore grade a"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 272,
+    "sugars": 5.5,
+    "salt": 1,
+    "protein": 8.1
+   }
+  },
+  {
+   "id": "6111266962187",
+   "name": "Lait frais naturel demi écrémé",
+   "brand": "Jaouda",
+   "category": "Milk",
+   "quantity": "450 ml",
+   "image": "https://images.openfoodfacts.org/images/products/611/126/696/2187/front_fr.56.200.jpg",
+   "price": 1.97,
+   "unitPrice": {
+    "amount": 0.44,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 0,
+   "ingredients": "fresh pasteurised semi-skimmed milk with 15g/l of fat",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "no gluten",
+    "no preservatives"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 45,
+    "sugars": 0,
+    "salt": 0,
+    "protein": 3.1
+   }
+  },
+  {
+   "id": "6111242101180",
+   "name": "Lait entier UHT",
+   "brand": "Jaouda",
+   "category": "Milk",
+   "quantity": "1L",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/1180/front_fr.89.200.jpg",
+   "price": 3.8,
+   "unitPrice": {
+    "amount": 0.38,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 0,
+   "ingredients": "whole milk",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [
+    "nuts"
+   ],
+   "labels": [
+    "no gluten",
+    "french milk"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 58,
+    "sugars": 0,
+    "salt": 0,
+    "protein": 3
+   }
+  },
+  {
+   "id": "6111032009665",
+   "name": "Semi-skimmed milk",
+   "brand": "Salim",
+   "category": "Milk",
+   "quantity": "470 ml",
+   "image": "https://images.openfoodfacts.org/images/products/611/103/200/9665/front_en.35.200.jpg",
+   "price": 3.53,
+   "unitPrice": {
+    "amount": 0.75,
+    "per": "100 ml"
+   },
+   "onSale": true,
+   "stock": 23,
+   "ingredients": "حليب نصف دسم، 15 غ/ل من المواد الدسمة",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "no gluten"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 45,
+    "sugars": 0,
+    "salt": 0,
+    "protein": 3
+   }
+  },
+  {
+   "id": "6111242100817",
+   "name": "Le Lait demi écrémé",
+   "brand": "Jaouda",
+   "category": "Milk",
+   "quantity": "500 ml",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/0817/front_en.36.200.jpg",
+   "price": 2.46,
+   "unitPrice": {
+    "amount": 0.49,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 35,
+   "ingredients": "جودة حليب طبيعي نصف الدسم معقم يحتوي على 15 ال من المواد الدهنية المكونات حليب نصف الدسم حليب من مزرعة جودة حليب UHT جودة خالص لا يحتوي على مواد حافظة. يتم الإحتفاظ به 6 أشهر خارج الثلاجة لأنه : يخضع لمعالجة حرارية UHT (درجة حرارة جد مرتفعة) و التي تقضي على الكائنات المجهرية. يعبأ في علبة معقمة مكونة من 6 طبقات تحميه من كل تلوث خارجي. Le lait UHT Jaouda ne contient pas de conservateurs. Si le lait UHT se conserve à température ambiante pendagt 6 mois, c'est parce que: - 1l subit un traitement thermique UHT (Ultra Haute Température) qui détruit tous les micro-organismes. - Il est conditionné dans un emballage aseptique de ó couches le protégeant de toute contamination extérieure.",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "no gluten",
+    "organic",
+    "catalan council of organic production"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 45,
+    "sugars": 0,
+    "salt": 0,
+    "protein": 3.1
+   }
+  },
+  {
+   "id": "6111242103528",
+   "name": "Croissance réduit en sucre",
+   "brand": "Jaouda",
+   "category": "Milk",
+   "quantity": "500 ml",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/3528/front_fr.76.200.jpg",
+   "price": 1.89,
+   "unitPrice": {
+    "amount": 0.38,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 49,
+   "ingredients": "Lait partiellement écrémé, lactose, huiles végétales non hydrogénées (colza, tournesol), malto dextrines, saccharose, lécithine de tournesol, vitamines : (A, B1, B2, B5, B6, B8, B9, B12, C, D3, E, K1, PP, taurines), sels minéraux : (citrate de calcium, citrate de magnésium, sulfates de fer, de zinc, de cuivre et de manganèse, iodure de potassium, sélénite de sodium).",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "low or no sugar",
+    "low sugar",
+    "no preservatives",
+    "reduced sugar"
+   ],
+   "nutriScore": null,
+   "per100g": {
+    "kcal": 64,
+    "sugars": 0.8,
+    "salt": 0.077,
+    "protein": 2.5
+   }
+  },
+  {
+   "id": "8901262200196",
+   "name": "Amul Masti Spiced Buttermilk 200ml",
+   "brand": "Amul",
+   "category": "Milk",
+   "quantity": "200mL",
+   "image": "https://images.openfoodfacts.org/images/products/890/126/220/0196/front_en.54.200.jpg",
+   "price": 5.81,
+   "unitPrice": {
+    "amount": 2.91,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 29,
+   "ingredients": "Milk solids, water, iodised salt, spices & condiments (1%), stabilizer [460(i)]. Allergen Information: Contains milk.",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "vegetarian",
+    "no preservatives",
+    "green dot india"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 28.5,
+    "sugars": 1.8,
+    "salt": 0.625,
+    "protein": 1.5
+   }
+  },
+  {
+   "id": "0811620020633",
+   "name": "CORE POWER High Protein Milk Shake Chocolate",
+   "brand": "rlife",
+   "category": "Milk",
+   "quantity": "414ml",
+   "image": "https://images.openfoodfacts.org/images/products/081/162/002/0633/front_en.1099.200.jpg",
+   "price": 3.66,
+   "unitPrice": {
+    "amount": 0.88,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 2,
+   "ingredients": "filtered lowfat grade a milk, alkalized cocoa, natural flavors, lactase enzyme, sea salt, acesulfame potassium, carrageenan, cellulose gel, cellulose gum, stevia leaf extract, sucralose, vitamin a palmitate, vitamin d3",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "no gluten",
+    "contains milk",
+    "no lactose"
+   ],
+   "nutriScore": null,
+   "per100g": {
+    "kcal": 55.5555555555556,
+    "sugars": 1.69082125603865,
+    "salt": 0.157004830917875,
+    "protein": 10.1449275362319
+   }
+  },
+  {
+   "id": "0856312002771",
+   "name": "Fairlife 2% Reduced Fat ultra-filtered milk",
+   "brand": "fa!rlife",
+   "category": "Milk",
+   "quantity": "1.5 l",
+   "image": "https://images.openfoodfacts.org/images/products/085/631/200/2771/front_en.969.200.jpg",
+   "price": 2.58,
+   "unitPrice": {
+    "amount": 0.17,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 43,
+   "ingredients": "reduced fat ultra-filtered milk, lactase enzyme, vitamin a palmitate, vitamin d3",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "kosher",
+    "no lactose",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 52,
+    "sugars": 2.61,
+    "salt": 0.130325,
+    "protein": 5.65
+   }
+  },
+  {
+   "id": "0856312002757",
+   "name": "Fairlife Nonfat Ultra-Filtered Milk",
+   "brand": "Fairlife",
+   "category": "Milk",
+   "quantity": "52 FL OZ / 1.5L",
+   "image": "https://images.openfoodfacts.org/images/products/085/631/200/2757/front_en.1311.200.jpg",
+   "price": 2.15,
+   "unitPrice": {
+    "amount": 0.14,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 47,
+   "ingredients": "ultra filtered milk, lactase enzyme, vitamin A palmitate, vitamin D3",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "low or no sugar",
+    "low sugar",
+    "kosher",
+    "no gmos",
+    "reduced sugar",
+    "50 less sugar"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 33,
+    "sugars": 2.5,
+    "salt": 0.12,
+    "protein": 5.42
+   }
+  },
+  {
+   "id": "0856312002795",
+   "name": "Chocolate Reduced Fat Ultra-filtered Milk",
+   "brand": "fairlife",
+   "category": "Milk",
+   "quantity": "52 fl oz",
+   "image": "https://images.openfoodfacts.org/images/products/085/631/200/2795/front_en.793.200.jpg",
+   "price": 4.93,
+   "unitPrice": {
+    "amount": 0.32,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 25,
+   "ingredients": "REDUCED FAT ULTRA-FILTERED MILK, SUGAR, ALKALIZED COCOA, LACTASE ENZYME, DIPOTASSIUM PHOSPHATE, SALT, ACESULFAME POTASSIUM, CARRAGEENAN, NATURAL AND ARTIFICIAL FLAVORS, SUCRALOSE, VITAMIN A PALMITATE, VITAMIN D3. CONTAINS MILK.",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "kosher",
+    "no lactose",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 58,
+    "sugars": 5,
+    "salt": 0.0007,
+    "protein": 5.42
+   }
+  },
+  {
+   "id": "6111242100206",
+   "name": "Le nature",
+   "brand": "Jaouda",
+   "category": "Yogurt",
+   "quantity": "110 g",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/0206/front_en.38.200.jpg",
+   "price": 5.77,
+   "unitPrice": {
+    "amount": 5.25,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 45,
+   "ingredients": "whole fresh milk, skimmed milk powder, starch, selected lactic ferment",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [
+    "milk"
+   ],
+   "labels": [],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 78.5,
+    "sugars": 0,
+    "salt": 0,
+    "protein": 4.2
+   }
+  },
+  {
+   "id": "6111242100305",
+   "name": "jaouda Cremy",
+   "brand": "jaouda",
+   "category": "Yogurt",
+   "quantity": "110g",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/0305/front_fr.98.200.jpg",
+   "price": 2.56,
+   "unitPrice": {
+    "amount": 2.33,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 23,
+   "ingredients": "fresh milk, sugar, skimmed milk powder, texturizer: starch, cream, flavouring, selected lactic ferments, 3% fat",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 109,
+    "sugars": 2,
+    "salt": 0,
+    "protein": 3.6
+   }
+  },
+  {
+   "id": "6111032001003",
+   "name": "Assil vanille",
+   "brand": "Danone",
+   "category": "Yogurt",
+   "quantity": "110 g",
+   "image": "https://images.openfoodfacts.org/images/products/611/103/200/1003/front_en.61.200.jpg",
+   "price": 3.59,
+   "unitPrice": {
+    "amount": 3.26,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 39,
+   "ingredients": "ليوغور م.د,%2. مصنوع إخط قد يمكن أن يحتوي على الگلوتين، الجوز والبندق. 2.",
+   "allergens": [],
+   "traces": [
+    "milk"
+   ],
+   "labels": [],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 95.5,
+    "sugars": 8,
+    "salt": 0,
+    "protein": 3.4
+   }
+  },
+  {
+   "id": "6111242103702",
+   "name": "Yaourt Grec Muesli",
+   "brand": "Jaouda",
+   "category": "Yogurt",
+   "quantity": "110g",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/3702/front_fr.4.200.jpg",
+   "price": 5.81,
+   "unitPrice": {
+    "amount": 5.28,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 23,
+   "ingredients": "Lait frais, crème, poudre lait, sucre, amidon, préparation de céréales et de fruits secs (amandes, noix, miel, raisins secs, blé, avoine, seigle), ferments lactiques, arômes Matière grasse: 7%",
+   "allergens": [
+    "gluten",
+    "milk",
+    "nuts"
+   ],
+   "traces": [
+    "nuts",
+    "\u001fen:gluten\u001f"
+   ],
+   "labels": [
+    "halal"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 140,
+    "sugars": 9,
+    "salt": 0,
+    "protein": 3.3
+   }
+  },
+  {
+   "id": "6111242100930",
+   "name": "رايبي جودة",
+   "brand": "Jaouda",
+   "category": "Yogurt",
+   "quantity": "165g",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/0930/front_fr.78.200.jpg",
+   "price": 3.59,
+   "unitPrice": {
+    "amount": 2.18,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 39,
+   "ingredients": "lait frais partiellement écrémé, sucre, colorant (amidon), arômes, correcteur d'acidité (acide citrique), ferments lactiques, matière grasse ( 1,3%)",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "no gluten"
+   ],
+   "nutriScore": "E",
+   "per100g": {
+    "kcal": 75.3,
+    "sugars": 9,
+    "salt": 0,
+    "protein": 2.4
+   }
+  },
+  {
+   "id": "6111242102002",
+   "name": "غلال القمح",
+   "brand": "Jaouda",
+   "category": "Yogurt",
+   "quantity": "110 g",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/2002/front_en.22.200.jpg",
+   "price": 2.79,
+   "unitPrice": {
+    "amount": 2.54,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 29,
+   "ingredients": "Ingré&lents : lait entier enrichi en crème, sucre, poudre de lait écrémé, texturant : amidon, préparation de céréales, fibres, arômes, ferments ladiques et colorant naturel. Matière grasse : 3,4 % Poids net : 110 g",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [
+    "milk"
+   ],
+   "labels": [
+    "source of fibre",
+    "high fibres"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 106,
+    "sugars": 7.5,
+    "salt": 0,
+    "protein": 3.5
+   }
+  },
+  {
+   "id": "6111242102781",
+   "name": "Tendre nature",
+   "brand": "Tendre",
+   "category": "Yogurt",
+   "quantity": "110g",
+   "image": "https://images.openfoodfacts.org/images/products/611/124/210/2781/front_fr.23.200.jpg",
+   "price": 3.25,
+   "unitPrice": {
+    "amount": 2.95,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 21,
+   "ingredients": "Lait frais, crème, sucre, poudre de lait écrémé, ferments lactiques,",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [
+    "milk"
+   ],
+   "labels": [],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 119,
+    "sugars": 9,
+    "salt": 0,
+    "protein": 4.2
+   }
+  },
+  {
+   "id": "6111032002208",
+   "name": "Activia Céréales",
+   "brand": "Danone",
+   "category": "Yogurt",
+   "quantity": "110g",
+   "image": "https://images.openfoodfacts.org/images/products/611/103/200/2208/front_fr.26.200.jpg",
+   "price": 4.21,
+   "unitPrice": {
+    "amount": 3.83,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 23,
+   "ingredients": "cream-free milk, dairy product mixes, cereal preparations, cream, sugar, cream-free powdered milk, modified starch, flavourings, helba yeast, for yoghurt, bifid and bacteria, contains gluten and is manufactured in a line that may contain almonds,\n\nnet weight: 110 g",
+   "allergens": [
+    "gluten",
+    "milk"
+   ],
+   "traces": [],
+   "labels": [],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 101,
+    "sugars": 14.3,
+    "salt": 0,
+    "protein": 3.4
+   }
+  },
+  {
+   "id": "3073781141429",
+   "name": "Kiri 7.5g protein creamy cheese with fresh yogurt greek style",
+   "brand": "Kiri",
+   "category": "Yogurt",
+   "quantity": "200g",
+   "image": "https://images.openfoodfacts.org/images/products/307/378/114/1429/front_fr.26.200.jpg",
+   "price": 4.96,
+   "unitPrice": {
+    "amount": 2.48,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 35,
+   "ingredients": "cow's milk, cream, water, yoghurt, lactic acid bacteria, skimmed cow's milk powder, cow's milk proteins powder, stabilizers: E452, E440, milk minerals concentrate, acidity regulator: E330, cow's milk fat, salt",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "made in france"
+   ],
+   "nutriScore": "D",
+   "per100g": {
+    "kcal": 208,
+    "sugars": 4,
+    "salt": 1.125,
+    "protein": 7.5
+   }
+  },
+  {
+   "id": "0096619483556",
+   "name": "organic GREEK YOGURT plain",
+   "brand": "KIRKLAND Signature",
+   "category": "Yogurt",
+   "quantity": "1.36 kg (48oz)",
+   "image": "https://images.openfoodfacts.org/images/products/009/661/948/3556/front_en.648.200.jpg",
+   "price": 2.56,
+   "unitPrice": {
+    "amount": 0.19,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 0,
+   "ingredients": "nonfat milk, active cultures (streptococcus thermophilus, lactobacillus bulgaricus, l. acidophilus, lactobacillus acidophilus, bifidus, lactobacillus casei).",
+   "allergens": [
+    "milk"
+   ],
+   "traces": [],
+   "labels": [
+    "no gluten",
+    "organic",
+    "kosher",
+    "no artificial flavors",
+    "usda organic",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 58.8235294117647,
+    "sugars": 2.35294117647059,
+    "salt": 0.0955882352941176,
+    "protein": 10.5882352941176
+   }
+  },
+  {
+   "id": "20621483",
+   "name": "Special Flakes Bran Flakes",
+   "brand": "Crownfield",
+   "category": "Cereal",
+   "quantity": "500 g",
+   "image": "https://images.openfoodfacts.org/images/products/000/002/062/1483/front_en.206.200.jpg",
+   "price": 3.71,
+   "unitPrice": {
+    "amount": 0.74,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 39,
+   "ingredients": "80% Shredded Wholegrain Wheat, 16% Wheat Bran, Sugar, Barley Malt Extract, Salt, Honey.",
+   "allergens": [
+    "gluten",
+    "milk",
+    "peanuts"
+   ],
+   "traces": [
+    "gluten",
+    "milk",
+    "nuts",
+    "peanuts"
+   ],
+   "labels": [
+    "vegetarian",
+    "vegan"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 376.666666666667,
+    "sugars": 13.2,
+    "salt": 0.63,
+    "protein": 11.1
+   }
+  },
+  {
+   "id": "0096619194261",
+   "name": "Ancient Grains Probiotic Granola",
+   "brand": "Kirkland Signature",
+   "category": "Cereal",
+   "quantity": "35.3 oz (1 kg)",
+   "image": "https://images.openfoodfacts.org/images/products/009/661/919/4261/front_en.199.200.jpg",
+   "price": 4.57,
+   "unitPrice": {
+    "amount": 0.46,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 45,
+   "ingredients": "Whole grain rolled oats, cane sugar, soy oil, khorasan wheat, rolled spelt, almonds, inulin, rice starch, rolled quinoa, rolled amaranth, sea salt, molasses, cinnamon, vanilla flavor, probiotics (Bacillus coagulans GBI-30 6086), tocopherols (vitamin E)",
+   "allergens": [
+    "gluten",
+    "nuts",
+    "soybeans"
+   ],
+   "traces": [
+    "gluten",
+    "nuts",
+    "peanuts",
+    "soybeans"
+   ],
+   "labels": [
+    "vegetarian",
+    "organic",
+    "kosher",
+    "usda organic",
+    "vegan",
+    "canada organic"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 454.545454545455,
+    "sugars": 17.9245283018868,
+    "salt": 0.566037735849057,
+    "protein": 10.377358490566
+   }
+  },
+  {
+   "id": "0058449770565",
+   "name": "Pumpkin Seed + Flax Granola",
+   "brand": "Nature's Path Organic",
+   "category": "Cereal",
+   "quantity": "35.3 oz (2 lb 3.3 oz) 1 kg",
+   "image": "https://images.openfoodfacts.org/images/products/005/844/977/0565/front_en.111.200.jpg",
+   "price": 4.79,
+   "unitPrice": {
+    "amount": 0.48,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 41,
+   "ingredients": "Whole grain rolled oats*, cane sugar, soy oil*, brown rice flour pumpkin seeds, flax seeds* oat syrup solids* [oat syrup solids*, tocopherols (added to enhance freshness)], sea salt, molasses*, cinnamon*. *Organic. Contains soy. Produced in a facility that uses wheat, peanuts and tree nuts",
+   "allergens": [
+    "gluten",
+    "nuts",
+    "peanuts",
+    "soybeans"
+   ],
+   "traces": [
+    "gluten",
+    "nuts",
+    "peanuts"
+   ],
+   "labels": [
+    "vegetarian",
+    "organic",
+    "no gmos",
+    "usda organic",
+    "vegan",
+    "non gmo project"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 472.727272727273,
+    "sugars": 18.1818181818182,
+    "salt": 0.204545454545455,
+    "protein": 10.9090909090909
+   }
+  },
+  {
+   "id": "0884912004710",
+   "name": "grape-nuts cereal",
+   "brand": "Post",
+   "category": "Cereal",
+   "quantity": "20.5 OZ (1 LB 4.5 OZ) 581 g",
+   "image": "https://images.openfoodfacts.org/images/products/088/491/200/4710/front_en.95.200.jpg",
+   "price": 6.95,
+   "unitPrice": {
+    "amount": 1.2,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 21,
+   "ingredients": "whole grain wheat flour, malted barley flour, salt, dried yeast, vitamins and minerals: reduced iron, niacinamide, zinc oxide (source of zinc), vitamin b6, thiamin mononitrate (vitamin b1), folic acid.",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [],
+   "labels": [
+    "vegetarian",
+    "no gmos",
+    "kosher",
+    "vegan",
+    "no soy",
+    "non gmo project"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 344.827586206897,
+    "sugars": 8.62,
+    "salt": 1.1638,
+    "protein": 10.34
+   }
+  },
+  {
+   "id": "0016000275263",
+   "name": "Cheerios",
+   "brand": "General Mills",
+   "category": "Cereal",
+   "quantity": "8.9 oz",
+   "image": "https://images.openfoodfacts.org/images/products/001/600/027/5263/front_en.77.200.jpg",
+   "price": 5.59,
+   "unitPrice": {
+    "amount": 2.22,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 0,
+   "ingredients": "Whole Grain Oats. Corn Starch, Sugar, Salt, Tripotassium Phosphate. Vitamin E (mixed tocopherols) Added to Preserve Freshness. Vitamins and Minerals: Calcium Carbonate, Iron and Zinc (mineral nutrients), Vitamin C (sodium ascorbate), A B Vitamin (niacinamide), Vitamin B6 (pyridoxine hydrochloride), Vitamin A (palmitate), Vitamin B₁ (thiamin mononitrate), A B Vitamin (folic acid), Vitamin B12, Vitamin D3.",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "no gluten",
+    "kosher",
+    "no artificial flavors",
+    "orthodox union kosher",
+    "Verified"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 358.974358974359,
+    "sugars": 5.12820512820513,
+    "salt": 1.21794871794872,
+    "protein": 12.8205128205128
+   }
+  },
+  {
+   "id": "0058449770206",
+   "name": "Heritage Flakes",
+   "brand": "Nature's Path Organic",
+   "category": "Cereal",
+   "quantity": "375g",
+   "image": "https://images.openfoodfacts.org/images/products/005/844/977/0206/front_en.48.200.jpg",
+   "price": 6.56,
+   "unitPrice": {
+    "amount": 1.75,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 33,
+   "ingredients": "Kamut khorasan wheat flour*, wheat bran*, whole wheat meal*, cane sugar*, whole oat flour*, spelt flour*, barley flour*, whole millet*, barley malt extract*, quinoa*, sea salt, honey*.",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [],
+   "labels": [
+    "no gmos",
+    "organic",
+    "eu organic",
+    "usda organic",
+    "canada organic",
+    "non gmo project"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 400,
+    "sugars": 12.5,
+    "salt": 1.0625,
+    "protein": 12.5
+   }
+  },
+  {
+   "id": "0016000435094",
+   "name": "Toasted Whole Grain Oat Cereal",
+   "brand": "Cheerios",
+   "category": "Cereal",
+   "quantity": "2 x 1 lb 4.35 oz (20.35 oz) (576 g)",
+   "image": "https://images.openfoodfacts.org/images/products/001/600/043/5094/front_en.65.200.jpg",
+   "price": 6.71,
+   "unitPrice": {
+    "amount": 0.74,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 31,
+   "ingredients": "Whole Grain Oats, Corn Starch, Sugar, Salt, Tripotassium Phosphate. Vitamin E (mixed tocopherols) (Added to Preserve Freshness). Vitamins and Minerals [Calcium Carbonate, Iron (mineral), Zinc (mineral), Vitamin C (sodium ascorbate), niacinamide, Vitamin B6 (pyridoxine hydrochloride), Vitamin A (palmitate), Vitamin B1 (thiamin mononitrate), folic acid, Vitamin B12, Vitamin D3].",
+   "allergens": [
+    "none"
+   ],
+   "traces": [],
+   "labels": [
+    "no gluten",
+    "no gmos",
+    "kosher",
+    "limited edition",
+    "lowers cholesterol",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 358.974358974359,
+    "sugars": 2,
+    "salt": 0.475,
+    "protein": 5
+   }
+  },
+  {
+   "id": "0675625371189",
+   "name": "Sprouted Rolled Oats",
+   "brand": "One Degree Organic Foods",
+   "category": "Cereal",
+   "quantity": "5 lbs (80 oz) 2.27 kg",
+   "image": "https://images.openfoodfacts.org/images/products/067/562/537/1189/front_en.252.200.jpg",
+   "price": 6.83,
+   "unitPrice": {
+    "amount": 0.3,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 21,
+   "ingredients": "sprouted organic gluten-free oats",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "vegetarian",
+    "no gluten",
+    "organic",
+    "kosher",
+    "no gmos",
+    "usda organic"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 384.615384615385,
+    "sugars": 0,
+    "salt": 0,
+    "protein": 13.4615384615385
+   }
+  },
+  {
+   "id": "0016000147652",
+   "name": "Lightly Sweetened Maple Berry Blend Cereal",
+   "brand": "Morning Summit",
+   "category": "Cereal",
+   "quantity": "1 box, 2lb 6oz",
+   "image": "https://images.openfoodfacts.org/images/products/001/600/014/7652/front_en.41.200.jpg",
+   "price": 4.71,
+   "unitPrice": {
+    "amount": 0.52,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 29,
+   "ingredients": "Almonds, Whole Grain Wheat, Organic Maple Syrup, Whole Grain Oats, Sugar, Dried Coconut, Pumpkin Seeds, Organic Coconut Oil, Dried Sweetened Cranberries (cranberries, sugar, glycerin), Dried Sweetened Cherries (cherries, sugar, glycerin), Corn Bran, Brown Sugar Syrup, Salt, Vanilla Extract. Vitamin E (mixed tocopherols). CONTAINS ALMOND, WHEAT, AND COCONUT; MAY CONTAIN SOY AND SESAME.",
+   "allergens": [
+    "gluten",
+    "nuts"
+   ],
+   "traces": [
+    "sesame seeds",
+    "soybeans"
+   ],
+   "labels": [],
+   "nutriScore": "D",
+   "per100g": {
+    "kcal": 509.090909090909,
+    "sugars": 23.6363636363636,
+    "salt": 0.363636363636364,
+    "protein": 10.9090909090909
+   }
+  },
+  {
+   "id": "0030000010402",
+   "name": "Old Fashioned Oats",
+   "brand": "Quaker Oats",
+   "category": "Cereal",
+   "quantity": "42 oz",
+   "image": "https://images.openfoodfacts.org/images/products/003/000/001/0402/front_en.268.200.jpg",
+   "price": 3.77,
+   "unitPrice": {
+    "amount": 0.32,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 35,
+   "ingredients": "whole grain rolled oats",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "kosher",
+    "no artificial flavors",
+    "no gmos",
+    "no preservatives",
+    "source of fibre",
+    "non gmo project"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 375,
+    "sugars": 2.5,
+    "salt": 0,
+    "protein": 12.5
+   }
+  }
+ ]
+}

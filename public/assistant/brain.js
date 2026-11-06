@@ -120,7 +120,17 @@ export function createBrain({ store, profile = null, model = null, speech = null
     if (picked.length) {
       const days = (m = /(\d+|two|three|four|five|six|seven) days?/.exec(t)) ? (NUMBERS[m[1]] || Number(m[1])) : null;
       const add = /^(shop|buy|get|add|put|order|fill|plan|purchase|grab|pick up)\b|\b(to|in|into) (my |the )?cart\b|\b(add|buy|get|shop) (them|those|everything|all|it|the ingredients)\b/.test(t);
-      return { type: 'meal', meals: picked.map((r) => r.name), days, add };
+      // A question about one ingredient of the meal ("what kind of butter does
+      // chicken alfredo call for", "how much garlic is in it").
+      let rest = t;
+      for (const r of picked) rest = rest.replace(clean(r.name), ' ');
+      const restWords = new Set(words(rest));
+      for (const r of picked) for (const ing of Object.keys(r.ingredients)) {
+        if (words(ing).some((w) => restWords.has(w))) return { type: 'ingredient', meal: r.name, ingredient: ing };
+      }
+      // The usual meal questions; anything else that names a meal is a question for the model, when there is one.
+      const usual = add || /\b(need|needs|needed|ingredients|make|cook|have|got|stock|shop|plan|list|for|what('s| is) in|everything)\b/.test(rest) || !/\b(what|which|how|does|do|is|are|can|could|why|when)\b/.test(rest);
+      return { type: 'meal', meals: picked.map((r) => r.name), days, add, weak: !usual };
     }
     if (/^what('s| is) (that|it|this)\??$|^(details|more details|tell me more)$/.test(t)) return { type: 'details', query: '' };
     // Details on a product.
@@ -177,6 +187,7 @@ export function createBrain({ store, profile = null, model = null, speech = null
       case 'remove': return removeReply(intent);
       case 'substitute': return substituteReply(intent);
       case 'meal': return mealReply(intent);
+      case 'ingredient': return ingredientReply(intent);
       case 'clear': {
         if (!cartLines().length) return { say: 'Your cart is already empty.' };
         if (!intent.confirmed) { ask({ ...intent, confirmed: true }); return { say: `Empty the cart, ${plural(cartLines().length, 'item')}? Say yes or no.` }; }
@@ -345,6 +356,23 @@ export function createBrain({ store, profile = null, model = null, speech = null
     return { say: parts.join(' '), products: shown.slice(0, 12) };
   }
 
+  // One ingredient of a meal: what the meal list says, and what the shelf has for it.
+  function ingredientReply({ meal, ingredient }) {
+    const r = meals().find((x) => x.name === meal);
+    const ws = r?.ingredients[ingredient];
+    if (!ws) return { say: `${meal} does not call for ${ingredient}.` };
+    recent.meals = [meal];
+    const options = ingredientProducts(ws);
+    const inStock = options.filter((p) => p.stock > 0), have = options.filter((p) => inCart(p.id));
+    recent.products = [...have, ...inStock.filter((p) => !inCart(p.id)), ...options.filter((p) => p.stock === 0)];
+    const parts = [`${meal} calls for ${ingredient}; the meal list gives no amount, so one pack or piece is counted.`];
+    if (!options.length) parts.push('Nothing on the shelf matches it.');
+    else parts.push(`For it the store has ${paged(options.map((p) => `${p.name}${size(p)}, ${money(p.price)}${p.stock === 0 ? ', out of stock' : ''}`), 'ingredient')}.`);
+    if (have.length) parts.push(`In your cart: ${list(have.map((p) => p.name))}.`);
+    else if (inStock.length) parts.push('Say add, and the name, to get one.');
+    return { say: parts.join(' '), products: recent.products.slice(0, 8) };
+  }
+
   // Details on one product: what it is, what is in it, what to know.
   function detailsReply({ query }) {
     const q = clean(query || '');
@@ -397,7 +425,7 @@ export function createBrain({ store, profile = null, model = null, speech = null
     let intent = parse(t);
     // A long, wordy "find" or "add" ("anything with no nuts I can snack on") is
     // a question for the model, when there is one; the set phrase is the fallback.
-    const wordy = intent && (intent.type === 'find' || intent.type === 'add') && words(intent.query || intent.items[0].query).length >= 4;
+    const wordy = intent && (intent.weak || ((intent.type === 'find' || intent.type === 'add') && words(intent.query || intent.items[0].query).length >= 4));
     if ((!intent || wordy) && model?.available?.()) {
       try { intent = (await model.resolve(t, context())) || intent; } catch (e) { if (!intent) return { say: `The model did not answer (${e.message}). ${HELP}` }; }
     }

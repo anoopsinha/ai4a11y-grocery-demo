@@ -13,6 +13,7 @@ const INTENTS = `{"type":"find","query":"chicken breasts"} — look something up
 {"type":"meal","meals":["Chicken alfredo","Chicken tacos"],"days":3,"add":false} — a question about one or more of the meals (what is needed, is it all in stock). "add":true when the person wants the ingredients bought, added or shopped for. Meal names exactly as listed. "days" is null unless they said it.
 {"type":"details","query":"fettuccine"} — details on one product: what is in it, allergens, nutrition, "tell me about", "what's in the"; "query" may name one of the RECENT products
 {"type":"more"} — the rest of a list the assistant was reading
+{"type":"ingredient","meal":"Chicken alfredo","ingredient":"butter"} — a question about one ingredient of a listed meal ("what kind of butter does it call for", "is there garlic in it"); "ingredient" exactly as in the meal's list
 {"type":"meals"} — which meals the assistant knows
 {"type":"cart"} — what is in the cart, or its total
 {"type":"clear"} — empty the cart
@@ -65,6 +66,7 @@ export function validate(obj) {
     }
     case 'remove': case 'substitute': return str(obj.query) ? { type, query: str(obj.query) } : null;
     case 'details': return { type, query: str(obj.query) };
+    case 'ingredient': return str(obj.meal) && str(obj.ingredient) ? { type, meal: str(obj.meal, 80), ingredient: str(obj.ingredient, 60) } : null;
     case 'more': return { type };
     case 'meal': {
       const meals = (Array.isArray(obj.meals) ? obj.meals : []).map((m) => str(m, 80)).filter(Boolean).slice(0, 8);

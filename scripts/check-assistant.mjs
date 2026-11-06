@@ -53,6 +53,9 @@ await check('no', /Okay/);
 await check('what is in the alfredo sauce', /Alfredo sauce.*Ingredients/s);
 await check('what is in the broccoli crowns', /Broccoli crown/);
 await check('what do I need for dinner', /Which meal\?/);
+await check('what kind of butter does the chicken alfredo recipe call for', (s) => /Chicken alfredo calls for butter/.test(s) && /Salted Butter|Unsalted/.test(s) && !/Add everything/.test(s));
+await check('how much garlic goes in chicken alfredo', /calls for garlic/);
+await check('is chicken alfredo popular', (s) => /7 ingredients/.test(s)); // no model here: the meal check is the fallback
 await check('what do I need for chicken tacos', /12 ingredients/);
 await check('add all of those to my cart', (s) => /Added \d+ products/.test(s) && /Already had/.test(s));
 await check('shop for chicken alfredo and chicken tacos for 3 days', (s) => /for 3 days/.test(s) && /shared/.test(s) && /Already had/.test(s) && /asked for 3 days, so you may want one more meal/.test(s));

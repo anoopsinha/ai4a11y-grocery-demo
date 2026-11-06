@@ -206,7 +206,8 @@ await model.probe();
 showModel();
 message('bot', 'Hi. ' + HELP);
 lastSaid = HELP;
-let wasOpen = false;
-try { wasOpen = localStorage.getItem('greenbasket-assistant') === 'open'; } catch {}
+// Open by default; closed only if the person closed it last time.
+let wasOpen = true;
+try { wasOpen = localStorage.getItem('greenbasket-assistant') !== 'closed'; } catch {}
 if (wasOpen) open(true);
 window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, isEcho };

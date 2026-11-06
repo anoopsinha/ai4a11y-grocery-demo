@@ -18,6 +18,7 @@
     <label><input id="instock" type="checkbox"> In stock only</label>
   </form>
   <button id="cart-button" type="button" aria-expanded="false" aria-controls="cart">Cart (<span id="cart-count">0</span>)</button>
+  <button id="assistant-button" type="button" aria-expanded="false" aria-controls="assistant">Assistant</button>
 </header>
 <p id="status" role="status" aria-live="polite"></p>
 <main>
@@ -39,7 +40,35 @@
     <div id="receipt" tabindex="-1"></div>
   </aside>
 </main>
+<aside id="assistant" hidden aria-labelledby="assistant-h">
+  <div class="assistant-head">
+    <h2 id="assistant-h">Assistant</h2>
+    <button id="assistant-close" type="button" class="quiet">Close</button>
+  </div>
+  <ol id="chat" role="log" aria-live="polite" aria-relevant="additions"></ol>
+  <p id="assistant-status" role="status" aria-live="polite"></p>
+  <form id="chat-form">
+    <label for="chat-input" class="vh">Ask the assistant</label>
+    <textarea id="chat-input" rows="1" placeholder="Ask, or say what you need" autocomplete="off"></textarea>
+    <button id="mic" type="button" class="quiet" aria-pressed="false">Voice</button>
+    <button type="submit">Send</button>
+  </form>
+  <div class="assistant-foot">
+    <label><input id="speak" type="checkbox"> Read replies aloud</label>
+    <details>
+      <summary>Model</summary>
+      <p id="model-status"></p>
+      <form id="model-key-form">
+        <label for="model-key">Google AI key (stays in this browser)</label>
+        <input id="model-key" type="password" autocomplete="off">
+        <button type="submit" class="quiet">Save</button>
+      </form>
+      <p class="muted">On your own computer, put GEMINI_API_KEY in the store's .env instead; then the key never reaches the browser.</p>
+    </details>
+  </div>
+</aside>
 <footer>Packaged product data © Open Food Facts contributors, Open Database License. Fresh counter photos are from Wikimedia Commons; each product's details name the photographer and licence. Prices and stock are simulated.</footer>
 <script type="module" src="app.js"></script>
+<script type="module" src="assistant/index.js"></script>
 </body>
 </html>

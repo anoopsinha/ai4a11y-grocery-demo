@@ -28,13 +28,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Check that every meal can be shopped
+      - run: npm ci
+      - name: Check the meals and the assistant's phrases
         run: npm test
       - name: Assemble the site
         run: |
-          mkdir _site
+          mkdir -p _site/vendor
           cp -R public/. _site/
           cp data/products.json _site/products.json
+          cp data/recipes.json _site/recipes.json
+          cp -R node_modules/@ai4a11y/toolkit _site/vendor/toolkit
+          mkdir _site/api && echo '{"available":false,"model":null}' > _site/api/model
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

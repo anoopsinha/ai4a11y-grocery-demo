@@ -18,12 +18,59 @@ It is the same page as the local one. Your cart stays in your own browser.
 
 ## Run it
 
-You need Node 20 or later. There is nothing to install.
+You need Node 20 or later.
 
 ```bash
+npm ci           # the toolkit package, vendored in vendor/
 npm start        # open http://127.0.0.1:5175/
-npm test         # can the store supply every meal in data/recipes.json?
+npm test         # can the store supply every meal, and does the assistant understand its phrases?
 ```
+
+## The assistant
+
+The **Assistant** button opens a chat beside the store. You can type, or press
+**Voice** and talk. It looks things up, fills the cart, plans meals and
+places the simulated order, and it answers in plain sentences made to be
+spoken as well as read:
+
+- *do you have chicken breasts* · *how much is salmon* · *add two avocados*
+- *what meals can you make* · *what do I need for chicken alfredo*
+- *shop for chicken alfredo and chicken tacos for three days*: one product
+  per ingredient goes in the cart, reusing what is already there, and it says
+  what the meals share and what is out of stock, with a substitute to accept
+- *what's in my cart* · *remove the salsa* · *undo* · *place the order*
+- *read replies aloud* · *speak slower* · *bigger text* · *I'm blind*
+
+Anything that is hard to undo (the order, emptying the cart, a substitute)
+waits for a *yes*.
+
+**How it uses the toolkit.** The
+[AI for Accessibility Toolkit](https://github.com/AI-for-Accessibility-Collective/AI-for-Accessibility-Toolkit)
+runs in the browser, over a localStorage port
+(`public/ports/local-storage-kv.js`). Its profile is the one place the
+assistant keeps how it should speak and show itself: *read replies aloud*,
+*speak slower* and *bigger text* write needs (`readAloud`, `readAloudRate`,
+`textSize`) to the profile, and the page renders them with the toolkit's web
+surface. The voice is the toolkit's speech building blocks: `speech.say()`
+for replies, where the profile's speaking rate wins over the page's default,
+and `speech.listen()` for the microphone, with the toolkit's own listening
+indicator. The toolkit is vendored as a packed tarball in `vendor/`
+(`npm run vendor` repacks it from a checkout next to this one; `vendor/PIN.txt`
+says which commit).
+
+**Set phrases first, a model second.** `public/assistant/brain.js` understands
+the phrases above with no model and no network, and it is what `npm test`
+checks. A sentence it does not understand goes to a model when one is
+reachable: on your own computer, put a Google AI key in `.env`
+(`GEMINI_API_KEY`, see `.env.example`) and the server makes the call, so the
+key never reaches the browser; on the hosted page, the sidebar's **Model**
+section takes a key that stays in that browser. The model sees the shelves,
+the meals and the cart as data and answers with one intent from a small
+vocabulary, which `model.js` validates before anything acts on it. Without a
+model the assistant says what it can do instead.
+
+Voice input needs a browser with speech recognition (Chrome and Edge have it)
+and permission to use the microphone.
 
 ## What is in it
 
@@ -79,8 +126,11 @@ Some of these are on purpose: they are the kind of barrier a real store has.
 - **One repeated photo.** Ground turkey and lean ground beef share a picture.
 - **Tidier than a real store.** There are no pop-ups, no expiring delivery
   times and no endless scrolling.
-- **The toolkit is not connected.** There is no profile and there are no
-  adapters yet.
+- **The assistant is literal.** Its set phrases are listed above; wording
+  far from them needs the model. It picks the cheapest in-stock product for
+  an ingredient, which is sometimes a small pack.
+- **The toolkit runs only in this browser.** The profile is local; it does
+  not sync with a hosted toolkit, and the store registers no adapters.
 
 ## Change what the store sells
 
@@ -103,7 +153,8 @@ npm run counter    # rebuild the fresh counter after editing counter-source.txt
 
 The code and the hand-written content are licensed under
 [Apache 2.0](LICENSE), like the toolkit. That covers the store page, the
-scripts, the fresh counter list and the meal list.
+assistant, the scripts, the fresh counter list and the meal list. The
+toolkit package in `vendor/` is the Collective's, under the same licence.
 
 The licence does not cover the product data or the pictures. They belong to
 others and keep their own terms:

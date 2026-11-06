@@ -5,7 +5,7 @@ const money = (n) => '$' + n.toFixed(2);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const say = (msg) => { $('status').textContent = msg; };
 
-const { products } = await (await fetch('products.json')).json();
+const [{ products }, { recipes }] = await Promise.all([fetch('products.json'), fetch('recipes.json')].map(async (r) => (await r).json()));
 const byId = new Map(products.map((p) => [p.id, p]));
 let cart = {};
 try { cart = JSON.parse(localStorage.getItem('greenbasket-cart') || '{}'); } catch {}
@@ -85,12 +85,21 @@ function renderCart() {
   save();
 }
 
-function change(id, delta) {
+function change(id, delta, { quiet = false } = {}) {
   const p = byId.get(id);
   const next = Math.min(p.stock, (cart[id] || 0) + delta);
   if (next <= 0) delete cart[id]; else cart[id] = next;
   renderCart();
-  say(delta > 0 ? `Added ${p.name}. ${cart[id]} in cart.` : `${p.name}: ${cart[id] || 0} in cart.`);
+  if (!quiet) say(delta > 0 ? `Added ${p.name}. ${cart[id]} in cart.` : `${p.name}: ${cart[id] || 0} in cart.`);
+  return cart[id] || 0;
+}
+const fee = () => Number(/\$([\d.]+)/.exec($('slot').value)[1]);
+const subtotal = () => Object.entries(cart).reduce((s, [id, qty]) => s + qty * (byId.get(id)?.price || 0), 0);
+function checkout() {
+  const items = Object.values(cart).reduce((s, n) => s + n, 0), total = subtotal() + fee();
+  $('receipt').innerHTML = `<h3>Order placed (simulated)</h3><p>${items} items, ${money(total)}, ${esc($('slot').value.replace(/ \(.*/, ''))}. Nothing was really ordered or charged.</p>`;
+  cart = {}; renderCart(); $('receipt').focus(); say('Order placed. This is a simulation.');
+  return { items, total };
 }
 
 document.addEventListener('click', (e) => {
@@ -113,14 +122,22 @@ $('cart-button').addEventListener('click', () => {
 $('search-form').addEventListener('submit', (e) => e.preventDefault());
 for (const id of ['q', 'cat', 'instock']) $(id).addEventListener('input', renderProducts);
 $('slot').addEventListener('change', renderCart);
-$('checkout').addEventListener('click', () => {
-  const total = $('totals').querySelector('dd:last-child').textContent;
-  const n = $('cart-count').textContent;
-  $('receipt').innerHTML = `<h3>Order placed (simulated)</h3><p>${n} items, ${esc(total)}, ${esc($('slot').value.replace(/ \(.*/, ''))}. Nothing was really ordered or charged.</p>`;
-  cart = {}; renderCart(); $('receipt').focus(); say('Order placed. This is a simulation.');
-});
+$('checkout').addEventListener('click', checkout);
 
-// A small hook for adapters and tests: read-only view of the store's state.
-window.greenbasket = { products, cart: () => ({ ...cart }), substituteFor: (id) => substituteFor(byId.get(id)) };
+// The store's API, for the assistant, adapters and tests. The assistant
+// (assistant/index.js) drives the store only through this.
+window.greenbasket = {
+  products, recipes,
+  cart: () => ({ ...cart }),
+  subtotal, total: () => subtotal() + (Object.keys(cart).length ? fee() : 0),
+  slot: () => $('slot').value.replace(/ \(.*/, ''),
+  add: (id, qty = 1) => (byId.has(id) ? change(id, qty, { quiet: true }) : 0),
+  remove: (id) => { delete cart[id]; renderCart(); },
+  clear: () => { cart = {}; renderCart(); },
+  restore: (snapshot) => { cart = { ...snapshot }; renderCart(); },
+  checkout,
+  substituteFor: (id) => substituteFor(byId.get(id)),
+  show: (query) => { $('q').value = query; $('cat').value = ''; renderProducts(); }, // put the matching products on screen
+};
 
 renderProducts(); renderCart();

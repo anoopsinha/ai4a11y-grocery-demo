@@ -16,6 +16,8 @@ import { createBlocks, setPersonal, personalFromProfile } from '../vendor/toolki
 import { localStorageKV } from '../ports/local-storage-kv.js';
 import { createBrain, HELP } from './brain.js';
 import { createModel } from './model.js';
+import { createSpeaker } from './speak.js';
+import { createEarcon } from './earcon.js';
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -54,31 +56,44 @@ async function applyProfile() {
   $('speak').checked = !!web.readAloud;
 }
 
-// ── 2. Speech, through the toolkit's blocks ──────────────────────────────────
+// ── 2. Speech: Google's voice when there is a model, else the toolkit's blocks ─
 const blocks = createBlocks({ win: window, adapter: 'greenbasket-assistant' });
 const s = blocks.session();
-let voice = null;     // the reply being spoken
 let listening = null; // the microphone, while it is on
+const earcon = createEarcon();
+let speaker;          // made below, once the model exists
 
-function stopSpeaking() { voice?.stop(); voice = null; }
+function stopSpeaking() { speaker?.stop(); }
 function speak(text) {
   stopSpeaking();
   if (!web.readAloud || !text) return;
-  // The microphone would hear the reply: pause it while speaking.
-  const resume = !!listening;
-  if (resume) micOff({ quiet: true });
-  voice = s.speech.say(text);
-  if (!voice.supported) { voice = null; return; }
-  voice.done.then(() => { if (resume && $('mic').getAttribute('aria-pressed') === 'true') micOn({ quiet: true }); });
+  // The microphone stays on while the assistant talks, so the person can
+  // interrupt; what the mic hears of the reply itself is filtered out below.
+  speaker.say(text);
+}
+
+// Did the microphone just hear the assistant's own voice? Most of the words
+// heard are in what is being (or was just) said.
+let lastSaid = '';
+const wordsOf = (t) => new Set(String(t).toLowerCase().replace(/[^a-z0-9' ]/g, ' ').split(/\s+/).filter((w) => w.length > 1));
+function isEcho(heard) {
+  const h = [...wordsOf(heard)];
+  if (!h.length) return true;
+  const said = wordsOf(lastSaid);
+  const hits = h.filter((w) => said.has(w)).length;
+  return hits / h.length >= 0.6 && (speaker.speaking || h.length >= 3);
 }
 
 function micOn({ quiet = false } = {}) {
   if (listening?.listening) return;
-  stopSpeaking();
   listening = s.speech.listen({
     feedback: 'none',
     commands: { 'stop': () => stopSpeaking(), 'stop listening': () => micOff() },
-    onUnknown: (heard) => submit(heard),
+    onUnknown: (heard) => {
+      if (isEcho(heard)) return;
+      stopSpeaking(); // barge-in: the person's words win
+      submit(heard);
+    },
   });
   if (!listening.supported) { listening = null; status('This browser has no speech recognition. Chrome and Edge do.'); return; }
   $('mic').setAttribute('aria-pressed', 'true'); $('mic').textContent = 'Stop listening';
@@ -95,7 +110,17 @@ function micOff({ quiet = false } = {}) {
 // ── 3. The brain and the model ───────────────────────────────────────────────
 const KEY = 'greenbasket-model-key';
 const model = createModel({ endpoint: 'api/model', key: () => { try { return localStorage.getItem(KEY) || ''; } catch { return ''; } }, needs: async () => (await profile.get()).needs.map((n) => ({ dimension: n.dimension, value: n.value })) });
-const brain = createBrain({ store, profile, model, speech: { stop: stopSpeaking } });
+// The earcon plays while the model is being asked, and while the first
+// piece of a spoken reply is on its way.
+const waited = { ...model, resolve: async (...a) => { earcon.start(); try { return await model.resolve(...a); } finally { earcon.stop(); } } };
+speaker = createSpeaker({
+  session: s,
+  synth: (text) => model.speak(text),
+  rate: () => web.speechRate || 1,
+  onWait: (on) => (on ? earcon.start() : earcon.stop({ done: false })),
+  onSpeaking: (on) => { $('stop-speaking').hidden = !on; },
+});
+const brain = createBrain({ store, profile, model: waited, speech: { stop: stopSpeaking } });
 
 // ── The sidebar ──────────────────────────────────────────────────────────────
 function status(text) { $('assistant-status').textContent = text; }
@@ -114,6 +139,7 @@ async function submit(text) {
   const t = String(text || '').trim();
   if (!t || busy) return;
   busy = true;
+  stopSpeaking();
   $('chat-input').value = '';
   message('user', t);
   const thinking = message('bot', '…');
@@ -121,6 +147,7 @@ async function submit(text) {
     const r = await brain.handle(t);
     thinking.remove();
     message('bot', r.say, r.products || []);
+    lastSaid = r.say;
     if (r.speak !== false) speak(r.say);
   } catch (e) {
     thinking.remove();
@@ -141,7 +168,11 @@ function open(on) {
 $('assistant-button').addEventListener('click', () => open($('assistant').hidden));
 $('assistant-close').addEventListener('click', () => { open(false); $('assistant-button').focus(); });
 $('chat-form').addEventListener('submit', (e) => { e.preventDefault(); submit($('chat-input').value); });
-$('chat-input').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submit($('chat-input').value); } });
+$('chat-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submit($('chat-input').value); return; }
+  if (e.key.length === 1) stopSpeaking(); // typing interrupts the reply
+});
+$('stop-speaking').addEventListener('click', () => { stopSpeaking(); $('chat-input').focus(); });
 $('mic').addEventListener('click', async () => {
   if (listening) { micOff(); return; }
   // Talking to it usually means wanting to hear it: turn replies on, in the profile.
@@ -159,13 +190,13 @@ $('model-key-form').addEventListener('submit', (e) => {
   $('model-key').value = '';
   showModel();
 });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && listening) micOff(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { if (speaker.speaking) stopSpeaking(); else if (listening) micOff(); } });
 
 function showModel() {
   const where = model.where();
-  $('model-status').textContent = where === 'server' ? 'Model: on, through this computer’s server.'
-    : where === 'browser' ? 'Model: on, with the key saved in this browser.'
-    : 'Model: off. The assistant understands its set phrases. Add a key to ask anything.';
+  $('model-status').textContent = where === 'server' ? 'Model: on, through this computer’s server. Voice: Google’s, when the server allows it.'
+    : where === 'browser' ? 'Model: on, with the key saved in this browser. Voice: Google’s.'
+    : 'Model: off. The assistant understands its set phrases, and speaks with this browser’s voice. Add a key to ask anything.';
   $('model-key-form').hidden = where === 'server';
 }
 
@@ -174,7 +205,8 @@ await applyProfile();
 await model.probe();
 showModel();
 message('bot', 'Hi. ' + HELP);
+lastSaid = HELP;
 let wasOpen = false;
 try { wasOpen = localStorage.getItem('greenbasket-assistant') === 'open'; } catch {}
 if (wasOpen) open(true);
-window.greenbasket.assistant = { submit, brain, profile, librarian, model, open };
+window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, isEcho };

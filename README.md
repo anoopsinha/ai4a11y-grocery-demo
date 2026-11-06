@@ -38,11 +38,29 @@ spoken as well as read:
 - *shop for chicken alfredo and chicken tacos for three days*: one product
   per ingredient goes in the cart, reusing what is already there, and it says
   what the meals share and what is out of stock, with a substitute to accept
+- after a meal question: *shop for it*, *add them all*, or just *yes*
+- *details on the fettuccine* · *what's in the salsa* · *more* (the rest of a list)
 - *what's in my cart* · *remove the salsa* · *undo* · *place the order*
 - *read replies aloud* · *speak slower* · *bigger text* · *I'm blind*
 
-Anything that is hard to undo (the order, emptying the cart, a substitute)
-waits for a *yes*.
+When it adds a meal it says how much of each thing went in (one pack or
+piece per ingredient, with the size), whether that matches the days you
+asked for, and offers details on any item; after details it asks whether
+you have another question. Anything that is hard to undo (the order,
+emptying the cart, a substitute) waits for a *yes*. Long lists are read a
+few at a time: *more* continues.
+
+**Voice.** With a model key the replies are spoken by Google's speech model
+(voice `Sulafat` on `gemini-3.8-flash-lite-tts`; both can be changed in
+`.env`, and `GEMINI_TTS_MODEL=off` keeps the browser's own voices). Without
+one, the toolkit's speech block speaks with the best voice the browser has.
+A reply is fetched in pieces so the first sentence starts sooner. You can
+interrupt at any time: start talking (the microphone stays on while the
+assistant speaks, and what it hears of the assistant's own voice is
+ignored), say *stop*, press **Stop speaking**, press Escape, or start
+typing. A small two-note sound plays while the assistant waits on the
+model, with a soft tick while it is still waiting, and a short note when
+the answer arrives.
 
 **How it uses the toolkit.** The
 [AI for Accessibility Toolkit](https://github.com/AI-for-Accessibility-Collective/AI-for-Accessibility-Toolkit)

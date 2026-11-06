@@ -17,6 +17,8 @@ try { process.loadEnvFile(path.join(root, '.env')); } catch { /* no .env: rely o
 const PORT = Number(process.env.PORT) || 5175;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
 const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+const GEMINI_TTS_MODEL = process.env.GEMINI_TTS_MODEL || 'gemini-3.8-flash-lite-tts';
+const GEMINI_TTS_VOICE = process.env.GEMINI_TTS_VOICE || 'Sulafat';
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.md': 'text/markdown; charset=utf-8' };
 const FILES = { '/products.json': 'data/products.json', '/api/products': 'data/products.json', '/recipes.json': 'data/recipes.json' };
@@ -53,13 +55,48 @@ async function model(req, res) {
   } finally { clearTimeout(t); }
 }
 
+// The voice: one piece of text to Google's speech model, back as audio
+// (base64, with its media type). The browser plays it, and falls back to the
+// browser's own voices when this route says no.
+async function speak(req, res) {
+  if (!GEMINI_API_KEY || GEMINI_TTS_MODEL === 'off') return json(res, 503, { error: 'no speech model on this server' });
+  let body = '';
+  for await (const chunk of req) { body += chunk; if (body.length > 20_000) return json(res, 413, { error: 'too long' }); }
+  let text;
+  try { ({ text } = JSON.parse(body)); } catch { return json(res, 400, { error: 'bad json' }); }
+  if (typeof text !== 'string' || !text.trim()) return json(res, 400, { error: 'text required' });
+  const ac = new AbortController();
+  const t = setTimeout(() => ac.abort(), 25_000);
+  try {
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TTS_MODEL}:generateContent`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': GEMINI_API_KEY },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: text.slice(0, 3000) }] }], // plain text: a style instruction gets read aloud too
+        generationConfig: { responseModalities: ['AUDIO'], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: GEMINI_TTS_VOICE } } } },
+      }),
+      signal: ac.signal,
+    });
+    if (!r.ok) {
+      let why = ''; try { why = (await r.json()).error?.message || ''; } catch { /* not json */ }
+      return json(res, 502, { error: `speech ${r.status}${why ? ': ' + why.split(/[.\n]/)[0].slice(0, 100) : ''}` });
+    }
+    const part = (await r.json()).candidates?.[0]?.content?.parts?.[0]?.inlineData;
+    if (!part) return json(res, 502, { error: 'no audio in the answer' });
+    return json(res, 200, { mimeType: part.mimeType, data: part.data });
+  } catch (e) {
+    return json(res, 502, { error: 'the speech model did not answer: ' + e.message });
+  } finally { clearTimeout(t); }
+}
+
 createServer(async (req, res) => {
   const url = new URL(req.url, 'http://x').pathname;
   if (url === '/api/model') {
-    if (req.method === 'GET') return json(res, 200, { available: !!GEMINI_API_KEY, model: GEMINI_API_KEY ? GEMINI_MODEL : null });
+    if (req.method === 'GET') return json(res, 200, { available: !!GEMINI_API_KEY, model: GEMINI_API_KEY ? GEMINI_MODEL : null, speech: !!GEMINI_API_KEY && GEMINI_TTS_MODEL !== 'off', voice: GEMINI_TTS_VOICE });
     if (req.method === 'POST') return model(req, res);
     return res.writeHead(405).end();
   }
+  if (url === '/api/speak') return req.method === 'POST' ? speak(req, res) : res.writeHead(405).end();
   let file;
   if (FILES[url]) file = path.join(root, FILES[url]);
   else {
@@ -73,4 +110,4 @@ createServer(async (req, res) => {
     const body = await readFile(file);
     res.writeHead(200, { 'content-type': TYPES[path.extname(file)] || 'application/octet-stream', 'cache-control': 'no-store' }).end(body);
   } catch { res.writeHead(404, { 'content-type': 'text/plain' }).end('Not found'); }
-}).listen(PORT, '127.0.0.1', () => console.log(`Simulated grocery store: http://127.0.0.1:${PORT}/  (model: ${GEMINI_API_KEY ? GEMINI_MODEL : 'off, no GEMINI_API_KEY'})`));
+}).listen(PORT, '127.0.0.1', () => console.log(`Simulated grocery store: http://127.0.0.1:${PORT}/  (model: ${GEMINI_API_KEY ? `${GEMINI_MODEL}, voice ${GEMINI_TTS_VOICE} on ${GEMINI_TTS_MODEL}` : 'off, no GEMINI_API_KEY'})`));

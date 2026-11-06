@@ -31,7 +31,7 @@ function card(p) {
   return `<li class="card" data-id="${esc(p.id)}">
     <img src="${esc(p.image)}" alt="" loading="lazy">
     <h3>${esc(p.name)}</h3>
-    <p class="brand">${esc(p.brand)}${p.brand && p.quantity ? ' · ' : ''}<span class="qty">${esc(p.quantity)}</span></p>
+    <p class="brand">${esc(p.brand)}${p.brand && (p.size || p.quantity) ? ' · ' : ''}<span class="qty">${esc(p.size || p.quantity)}</span></p>
     <p class="price">${money(p.price)} ${p.onSale ? '<span class="sale">Sale</span>' : ''}</p>
     ${p.unitPrice ? `<p class="unit">${money(p.unitPrice.amount)} per ${esc(p.unitPrice.per)}</p>` : ''}
     ${stockLine(p)}

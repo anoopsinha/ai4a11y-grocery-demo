@@ -19,9 +19,15 @@ npm start        # open http://127.0.0.1:5175/
 
 - **Products** come from [Open Food Facts](https://world.openfoodfacts.org):
   names, brands, pack sizes, pictures, ingredients, allergens and nutrition.
-  They are kept as a fixed snapshot in `data/products.json`.
+  They are kept as a fixed snapshot in `data/products.json`: 90 products in
+  nine aisles.
+- **The store is American.** The snapshot only takes products with a United
+  States barcode that are listed for the United States and described in
+  English. Pack sizes and unit prices are in ounces and fluid ounces.
+  Nutrition is per 100 g, because that is how the source records it.
 - **Prices and stock are simulated.** Each is worked out from the product's
-  barcode, so they stay the same every time. About one product in ten is out
+  barcode and pack size, so they stay the same every time, and a bigger pack
+  costs less per ounce. They are not real American prices. About one product in ten is out
   of stock and one in ten is low, so substitutions can be tried.
 - **The store** has search, aisles, unit prices, an ingredients and allergens
   panel, substitutes for out-of-stock products, a cart, delivery times and a
@@ -36,17 +42,16 @@ products, the cart and the substitute for a product.
 npm run fetch
 ```
 
-The Open Food Facts search allows about ten requests a minute. The script
-keeps the aisles it already has, so run it again if an aisle comes back empty.
+This fetches every aisle again. If the search fails for an aisle, the script
+keeps what the last snapshot had for it.
 
 ## Not built yet
 
-- The snapshot has 60 products in six aisles (bread, milk, yogurt, cereal,
-  juice, spreads). Cheese, pasta and snacks are missing: the Open Food Facts
-  search was unavailable for two of them and returned nothing for cheese.
-- Many products are not from the United States, so some names are in French.
-  The country filter in the fetch script does not work yet.
-
+- Most ingredient lists are built from Open Food Facts ingredient tags, in
+  lower case, not the wording on the label. The product pages that hold the
+  label text were not answering when the snapshot was made.
+- A few products sit in an odd aisle (crispbread under bread, instant ramen
+  under pasta), because the source's categories are broad.
 - The toolkit is not connected. There is no profile and there are no adapters.
 - The store is tidier than a real one. It has no pop-ups, no expiring
   delivery times and no endless scrolling.

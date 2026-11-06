@@ -129,7 +129,7 @@ export function createBrain({ store, profile = null, model = null, speech = null
         if (words(ing).some((w) => restWords.has(w))) return { type: 'ingredient', meal: r.name, ingredient: ing };
       }
       // The usual meal questions; anything else that names a meal is a question for the model, when there is one.
-      const usual = add || /\b(need|needs|needed|ingredients|make|cook|have|got|stock|shop|plan|list|for|what('s| is) in|everything)\b/.test(rest) || !/\b(what|which|how|does|do|is|are|can|could|why|when)\b/.test(rest);
+      const usual = add || /\b(need|needs|needed|ingredients|shopping list|in stock|everything|what('s| is) in|what do i need)\b|^(can|could) i (make|cook)|^(do you have|have you got)/.test(rest) || !/\b(what|which|how|does|do|is|are|can|could|why|when|should)\b/.test(rest);
       return { type: 'meal', meals: picked.map((r) => r.name), days, add, weak: !usual };
     }
     if (/^what('s| is) (that|it|this)\??$|^(details|more details|tell me more)$/.test(t)) return { type: 'details', query: '' };

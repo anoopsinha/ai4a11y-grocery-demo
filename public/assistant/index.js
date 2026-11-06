@@ -105,6 +105,12 @@ function ownWords(heard) {
   return h.slice(echoLength(h, wordsOf(lastSaid))).join(' ');
 }
 const isEcho = (heard) => !ownWords(heard);
+// Words of their own that are not anywhere in the reply: the sure sign a
+// person is talking, since a misheard echo still uses the reply's words.
+function novelWords(heard) {
+  const said = new Set(wordsOf(lastSaid));
+  return wordsOf(ownWords(heard)).filter((w) => !said.has(w));
+}
 
 function micOn({ quiet = false } = {}) {
   if (listening?.listening) return;
@@ -113,16 +119,21 @@ function micOn({ quiet = false } = {}) {
     onInterim: (text) => {
       if (!speaker.speaking) return;
       heardWhileSpeaking = true;
-      // Two words of their own and the assistant yields.
-      if (wordsOf(ownWords(text)).length >= 2) { stopSpeaking(); status('Go on.'); }
+      // Two words that are not in the reply at all, or a plain "stop", and the assistant yields.
+      if (novelWords(text).length >= 2 || /\bstop\b\s*$/i.test(text)) { stopSpeaking(); status('Go on.'); }
     },
     onFinal: (text) => {
-      const own = heardWhileSpeaking || speaker.speaking ? ownWords(text) : text;
+      const during = heardWhileSpeaking || speaker.speaking;
       heardWhileSpeaking = false;
+      const own = during ? ownWords(text) : text;
       if (!own.trim()) return;
       const t = own.trim().toLowerCase().replace(/[.,!?]/g, '');
-      if (/^(stop|stop talking|be quiet|quiet)$/.test(t)) { stopSpeaking(); return; }
+      if (/(^|\s)(stop|stop talking|be quiet|quiet)$/.test(t)) { stopSpeaking(); return; }
       if (/^stop listening$/.test(t)) { micOff(); return; }
+      // Heard over the assistant's voice: only a clearly new sentence, or a
+      // simple phrase such as yes, no or shop for it, counts; a misheard
+      // echo is dropped.
+      if (during && novelWords(text).length < 1 && !brain.simple(own)) return;
       stopSpeaking();
       submit(own);
     },
@@ -244,4 +255,4 @@ lastSaid = HELP;
 let wasOpen = true;
 try { wasOpen = localStorage.getItem('greenbasket-assistant') !== 'closed'; } catch {}
 if (wasOpen) open(true);
-window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, isEcho, ownWords };
+window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, isEcho, ownWords, novelWords };

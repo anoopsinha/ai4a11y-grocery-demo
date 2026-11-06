@@ -459,5 +459,5 @@ export function createBrain({ store, profile = null, model = null, speech = null
     };
   }
 
-  return { handle, parse, execute, context, get pending() { return pending; }, get recent() { return recent; } };
+  return { handle, parse, execute, context, simple: (text) => isSimple(parse(String(text || '').trim()), text), get pending() { return pending; }, get recent() { return recent; } };
 }

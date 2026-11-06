@@ -57,8 +57,8 @@ one, the toolkit's speech block speaks with the best voice the browser has.
 A reply is fetched in pieces so the first sentence starts sooner. You can
 interrupt at any time: start talking (the microphone stays on while the
 assistant speaks; what it hears of the assistant's own voice is recognised
-as an in-order run of the reply's words and dropped, and two words of your
-own stop the voice at once), say *stop*, press **Stop speaking**, press
+as an in-order run of the reply's words and dropped; two words that are not
+in the reply at all stop the voice at once), say *stop*, press **Stop speaking**, press
 Escape, or start typing. A small two-note sound plays while the assistant waits on the
 model, with a soft tick while it is still waiting, and a short note when
 the answer arrives.

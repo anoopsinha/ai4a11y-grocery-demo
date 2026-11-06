@@ -41,8 +41,9 @@ keeps the aisles it already has, so run it again if an aisle comes back empty.
 
 ## Not built yet
 
-- The snapshot has 40 products in four aisles (bread, milk, yogurt, cereal).
-  The Open Food Facts search was unavailable when the other five were fetched.
+- The snapshot has 60 products in six aisles (bread, milk, yogurt, cereal,
+  juice, spreads). Cheese, pasta and snacks are missing: the Open Food Facts
+  search was unavailable for two of them and returned nothing for cheese.
 - Many products are not from the United States, so some names are in French.
   The country filter in the fetch script does not work yet.
 

@@ -1351,6 +1351,634 @@
     "salt": 0,
     "protein": 12.5
    }
+  },
+  {
+   "id": "8850389100684",
+   "name": "Mogu lychee",
+   "brand": "Sappe Public Company Limited",
+   "category": "Juice",
+   "quantity": "320 ml",
+   "image": "https://images.openfoodfacts.org/images/products/885/038/910/0684/front_en.130.200.jpg",
+   "price": 5.97,
+   "unitPrice": {
+    "amount": 1.87,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 2,
+   "ingredients": "water, lychee juice from concentrate 25%, coconut 25%, fructose, sucrose, acidifiers (citric acid, calcium lactate), lychee flavor, preservative e211, gelling agent: gellan gum, color: e129 - 0.0001% (this dye may have adverse effects on activity and attention in children),",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "green dot"
+   ],
+   "nutriScore": "E",
+   "per100g": {
+    "kcal": 53,
+    "sugars": 12,
+    "salt": 0.05,
+    "protein": 0
+   }
+  },
+  {
+   "id": "0051000012920",
+   "name": "Original 100% Vegetable Juice",
+   "brand": "V8",
+   "category": "Juice",
+   "quantity": "11.5 FL OZ (340 mL)",
+   "image": "https://images.openfoodfacts.org/images/products/005/100/001/2920/front_en.79.200.jpg",
+   "price": 5.72,
+   "unitPrice": {
+    "amount": 1.68,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 37,
+   "ingredients": "VEGETABLE JUICE (WATER AND CONCENTRATED JUICES OF TOMATOES, CARROTS, CELERY, BEETS, PARSLEY, LETTUCE, WATERCRESS, SPINACH), SALT, NATURAL FLAVORING, VITAMIN C (ASCORBIC ACID), BETA CAROTENE, CITRIC ACID.",
+   "allergens": [
+    "celery"
+   ],
+   "traces": [],
+   "labels": [],
+   "nutriScore": "D",
+   "per100g": {
+    "kcal": 60,
+    "sugars": 10,
+    "salt": 2.3,
+    "protein": 3
+   }
+  },
+  {
+   "id": "0016229901141",
+   "name": "Coconut Juice",
+   "brand": "Foco",
+   "category": "Juice",
+   "quantity": "350ml",
+   "image": "https://images.openfoodfacts.org/images/products/001/622/990/1141/front_en.68.200.jpg",
+   "price": 3.66,
+   "unitPrice": {
+    "amount": 1.05,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 31,
+   "ingredients": "Young coconut juice (80%), water, sugar, young coconut pulp, citric acid (e330) as acidity regulators, potassium metabisulphite (e224) as preservative.",
+   "allergens": [],
+   "traces": [],
+   "labels": [],
+   "nutriScore": "D",
+   "per100g": {
+    "kcal": 34.2857142857143,
+    "sugars": 7.42857142857143,
+    "salt": 0.0285714285714286,
+    "protein": 0.142857142857143
+   }
+  },
+  {
+   "id": "0082592660152",
+   "name": "Mighty Mango Machine",
+   "brand": "Naked",
+   "category": "Juice",
+   "quantity": "15.2 fl oz",
+   "image": "https://images.openfoodfacts.org/images/products/008/259/266/0152/front_en.73.200.jpg",
+   "price": 3.23,
+   "unitPrice": {
+    "amount": 0.72,
+    "per": "100 ml"
+   },
+   "onSale": true,
+   "stock": 35,
+   "ingredients": "MANGO PUREE, APPLE JUICE FROM CONCENTRATE (WATER, APPLE JUICE CONCENTRATE), ORANGE JUICE, BANANA PUREE, LEMON JUICE, NATURAL FLAVOR, BETA CAROTENE (VITAMIN A).",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "no gmos",
+    "no added sugar",
+    "non gmo project"
+   ],
+   "nutriScore": "D",
+   "per100g": {
+    "kcal": 57.7777777777778,
+    "sugars": 11.3333333333333,
+    "salt": 0.0166666666666667,
+    "protein": 0.222222222222222
+   }
+  },
+  {
+   "id": "0096619596447",
+   "name": "Cranberry Juice Blend",
+   "brand": "Kirkland Signature Ocean Spray",
+   "category": "Juice",
+   "quantity": "2 x 96 fl oz",
+   "image": "https://images.openfoodfacts.org/images/products/009/661/959/6447/front_en.26.200.jpg",
+   "price": 3.03,
+   "unitPrice": {
+    "amount": 0.05,
+    "per": "100 ml"
+   },
+   "onSale": true,
+   "stock": 29,
+   "ingredients": "cranberry juice (water, water cranberry juice concentrate), apple juice (water, apple juice concentrate), grape juice (water, grape juice concentrate), natural flavor, pectin, ascorbic acid (vitamin C).",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "no added sugar"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 41.6667,
+    "sugars": 10,
+    "salt": 0.03125,
+    "protein": 0
+   }
+  },
+  {
+   "id": "0016229901158",
+   "name": "Boisson Tamarin 35CL FOCO",
+   "brand": "Foco",
+   "category": "Juice",
+   "quantity": "350 ml",
+   "image": "https://images.openfoodfacts.org/images/products/001/622/990/1158/front_en.60.200.jpg",
+   "price": 4.74,
+   "unitPrice": {
+    "amount": 1.35,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 39,
+   "ingredients": "Water, tamarind pulp (30%), sugar, high fructose syrup.",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "vegetarian",
+    "vegan",
+    "green dot"
+   ],
+   "nutriScore": "E",
+   "per100g": {
+    "kcal": 89,
+    "sugars": 19,
+    "salt": 0.03,
+    "protein": 1
+   }
+  },
+  {
+   "id": "0071464240806",
+   "name": "Green Goodness 100% Juice Smoothie",
+   "brand": "Bolthouse Farms",
+   "category": "Juice",
+   "quantity": "1540 g",
+   "image": "https://images.openfoodfacts.org/images/products/007/146/424/0806/front_en.23.200.jpg",
+   "price": 6.74,
+   "unitPrice": {
+    "amount": 0.44,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 35,
+   "ingredients": "APPLE JUICE FROM CONCENTRATE (WATER, APPLE JUICE CONCENTRATE, PEAR JUICE FROM CONCENTRATE (WATER, PEAR JUICE CONCENTRATE), MANGO PUREE FROM CONCENTRATE (WATER, MANGO PUREE CONCENTRATE BANANA PUREE, CUCUMBER JUICE FROM CONCENTRATE (WATER CUCUMBER JUICE CONCENTRATE, PINEAPPLE JUICE FROM CONCENTRATE (WATER. PINEAPPLE JUICE CONCENTRATE, KIWI PUREE CONTAINS 2% OR LESS: PASSION FRUIT JUICE NATURAL FLAVORS, SPIRULINAT, VITAMIN C (ASCORBIC ACID). GREEN TEA, SPINACH BROCCOLD, BARLEY GRASS, WHEATGRASS GARLIC, JERUSALEM ARTICHOKE, DULSE LEAF DRIED CONTAINS: WHEATGRASS, BARLEY.",
+   "allergens": [
+    "gluten"
+   ],
+   "traces": [],
+   "labels": [],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 54.1666666666667,
+    "sugars": 10,
+    "salt": 0.0208333333333333,
+    "protein": 0.416666666666667
+   }
+  },
+  {
+   "id": "0082592194152",
+   "name": "Strawberry Banana Machine",
+   "brand": "Naked",
+   "category": "Juice",
+   "quantity": "450 mL",
+   "image": "https://images.openfoodfacts.org/images/products/008/259/219/4152/front_en.116.200.jpg",
+   "price": 6.95,
+   "unitPrice": {
+    "amount": 1.54,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 41,
+   "ingredients": "strawberry puree, apple juice, banana puree, orange juice, natural flavors,",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "kosher",
+    "no gmos",
+    "no added sugar",
+    "non gmo project",
+    "organized kashrut kosher"
+   ],
+   "nutriScore": "E",
+   "per100g": {
+    "kcal": 56,
+    "sugars": 11.11,
+    "salt": 0.016675,
+    "protein": 0.44
+   }
+  },
+  {
+   "id": "3123340008288",
+   "name": "Le Fruit - Orange sans pulpe",
+   "brand": "Joker",
+   "category": "Juice",
+   "quantity": "1,5 l",
+   "image": "https://images.openfoodfacts.org/images/products/312/334/000/8288/front_fr.47.200.jpg",
+   "price": 6.45,
+   "unitPrice": {
+    "amount": 0.43,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 0,
+   "ingredients": "Jus d'orange à base de jus concentré 100%, vitamine C.",
+   "allergens": [],
+   "traces": [],
+   "labels": [
+    "no preservatives",
+    "made in france",
+    "no added sugar",
+    "nutriscore",
+    "nutriscore grade c"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 42,
+    "sugars": 8.7,
+    "salt": 0.01,
+    "protein": 0.6
+   }
+  },
+  {
+   "id": "0014800002294",
+   "name": "Apple Juice",
+   "brand": "Mott's",
+   "category": "Juice",
+   "quantity": "8 fl oz",
+   "image": "https://images.openfoodfacts.org/images/products/001/480/000/2294/front_en.15.200.jpg",
+   "price": 3.03,
+   "unitPrice": {
+    "amount": 1.28,
+    "per": "100 ml"
+   },
+   "onSale": false,
+   "stock": 0,
+   "ingredients": "Water, apple juice concentrate, ascorbic acid (vitamin c).",
+   "allergens": [],
+   "traces": [],
+   "labels": [],
+   "nutriScore": "E",
+   "per100g": {
+    "kcal": 50.7210847549326,
+    "sugars": 11.8349197761509,
+    "salt": 0.0317006779718329,
+    "protein": 0
+   }
+  },
+  {
+   "id": "0096619555505",
+   "name": "Organic Creamy Peanut Butter",
+   "brand": "Kirkland",
+   "category": "Spreads",
+   "quantity": "793.8 g",
+   "image": "https://images.openfoodfacts.org/images/products/009/661/955/5505/front_en.457.200.jpg",
+   "price": 7.7,
+   "unitPrice": {
+    "amount": 0.97,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 2,
+   "ingredients": "Dry roasted organic peanuts, sea salt",
+   "allergens": [
+    "peanuts"
+   ],
+   "traces": [
+    "nuts",
+    "soybeans",
+    "coconut"
+   ],
+   "labels": [
+    "organic",
+    "kosher",
+    "usda organic",
+    "orthodox union kosher",
+    "Verified"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 562.5,
+    "sugars": 1.56,
+    "salt": 0.0005078125,
+    "protein": 12.5
+   }
+  },
+  {
+   "id": "0051500255162",
+   "name": "Creamy Peanut Butter",
+   "brand": "Jif",
+   "category": "Spreads",
+   "quantity": "16oz",
+   "image": "https://images.openfoodfacts.org/images/products/005/150/025/5162/front_en.197.200.jpg",
+   "price": 8.13,
+   "unitPrice": {
+    "amount": 1.79,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 47,
+   "ingredients": "MADE FROM ROASTED PEANUTS AND SUGAR, CONTAINS 2% OR LESS OF: MOLASSES, FULLY HYDROGENATED VEGETABLE OILS (RAPESEED AND SOYBEAN), MONO AND DIGLYCERIDES, SALT.",
+   "allergens": [
+    "peanuts",
+    "soybeans"
+   ],
+   "traces": [],
+   "labels": [
+    "no gluten",
+    "kosher",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 575.757575757576,
+    "sugars": 9.09090909090909,
+    "salt": 1.06060606060606,
+    "protein": 21.2121212121212
+   }
+  },
+  {
+   "id": "0034000400126",
+   "name": "Reeses Creamy Peanut Butter",
+   "brand": "Reese's",
+   "category": "Spreads",
+   "quantity": "510 g",
+   "image": "https://images.openfoodfacts.org/images/products/003/400/040/0126/front_en.55.200.jpg",
+   "price": 7.6,
+   "unitPrice": {
+    "amount": 1.49,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 49,
+   "ingredients": "Peanuts; Sugar; hydrogenated Vegetable Oil [rapeseed Oil; Cottonseed Oil; Soybean Oil]; Salt; Peanut Oil; Monoglycerides; Molasses; Cornstarch.",
+   "allergens": [
+    "peanuts",
+    "soybeans"
+   ],
+   "traces": [],
+   "labels": [],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 593,
+    "sugars": 9.37,
+    "salt": 1.092725,
+    "protein": 24.98
+   }
+  },
+  {
+   "id": "0096619225798",
+   "name": "beurre de noix mélangées avec graines",
+   "brand": "Kirkland",
+   "category": "Spreads",
+   "quantity": "765 g",
+   "image": "https://images.openfoodfacts.org/images/products/009/661/922/5798/front_en.81.200.jpg",
+   "price": 5,
+   "unitPrice": {
+    "amount": 0.65,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 35,
+   "ingredients": "Almonds, Cashews, Pumpkin Seeds, Chia Seeds, and Flax Seeds.",
+   "allergens": [
+    "nuts"
+   ],
+   "traces": [
+    "nuts"
+   ],
+   "labels": [],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 600,
+    "sugars": 3.125,
+    "salt": 0,
+    "protein": 21.875
+   }
+  },
+  {
+   "id": "0009800800056",
+   "name": "nutella & GO! with Breadsticks",
+   "brand": "Nutella",
+   "category": "Spreads",
+   "quantity": "52 g (1.8 OZ)",
+   "image": "https://images.openfoodfacts.org/images/products/000/980/080/0056/front_en.141.200.jpg",
+   "price": 6.76,
+   "unitPrice": {
+    "amount": 13,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 39,
+   "ingredients": "NUTELLA: SUGAR, PALM OIL, HAZELNUTS, COCOA, SKIM MILK, WHEY (MILK), LECITHIN AS EMULSIFIER (SOY), VANILLIN: AN ARTIFICIAL FLAVOR. BREADSTICKS: WHEAT FLOUR, PALM OIL, SALT, BAKER'S YEAST, MALT EXTRACT.",
+   "allergens": [
+    "gluten",
+    "milk",
+    "nuts",
+    "soybeans"
+   ],
+   "traces": [
+    "75235356"
+   ],
+   "labels": [
+    "made in italy"
+   ],
+   "nutriScore": "E",
+   "per100g": {
+    "kcal": 500,
+    "sugars": 44.2307692307692,
+    "salt": 1.20192307692308,
+    "protein": 7.69230769230769
+   }
+  },
+  {
+   "id": "0096619676811",
+   "name": "Crema de Almendras",
+   "brand": "Kirkland Signature",
+   "category": "Spreads",
+   "quantity": "765 g (27 oz) 1.68 lb",
+   "image": "https://images.openfoodfacts.org/images/products/009/661/967/6811/front_en.100.200.jpg",
+   "price": 8.4,
+   "unitPrice": {
+    "amount": 1.1,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 21,
+   "ingredients": "Roasted almonds.",
+   "allergens": [
+    "nuts"
+   ],
+   "traces": [
+    "nuts"
+   ],
+   "labels": [
+    "no gluten",
+    "kosher",
+    "certified gluten free",
+    "made in usa",
+    "orthodox union kosher"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 621,
+    "sugars": 3.125,
+    "salt": 0,
+    "protein": 18.75
+   }
+  },
+  {
+   "id": "0051500243213",
+   "name": "Peanut Butter Spread",
+   "brand": "Jif",
+   "category": "Spreads",
+   "quantity": "40 oz",
+   "image": "https://images.openfoodfacts.org/images/products/005/150/024/3213/front_en.119.200.jpg",
+   "price": 7.1,
+   "unitPrice": {
+    "amount": 0.63,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 2,
+   "ingredients": "PEANUTS, SUGAR, PALM OIL, SALT, MOLASSES",
+   "allergens": [
+    "gluten",
+    "nuts",
+    "peanuts"
+   ],
+   "traces": [
+    "gluten",
+    "nuts",
+    "peanuts"
+   ],
+   "labels": [
+    "no gluten",
+    "no gmos",
+    "source of proteins",
+    "high proteins",
+    "no trans fat",
+    "non gmo project"
+   ],
+   "nutriScore": "B",
+   "per100g": {
+    "kcal": 575.757575757576,
+    "sugars": 4,
+    "salt": 0.2,
+    "protein": 7
+   }
+  },
+  {
+   "id": "6111271520044",
+   "name": "peanut butter crunchy",
+   "brand": "",
+   "category": "Spreads",
+   "quantity": "200 g",
+   "image": "https://images.openfoodfacts.org/images/products/611/127/152/0044/front_fr.3.200.jpg",
+   "price": 3.66,
+   "unitPrice": {
+    "amount": 1.83,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 21,
+   "ingredients": "100 % cacahuètes grillées",
+   "allergens": [
+    "peanuts"
+   ],
+   "traces": [],
+   "labels": [
+    "source of fibre",
+    "high fibres"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 608,
+    "sugars": 3.3,
+    "salt": 0.003,
+    "protein": 23
+   }
+  },
+  {
+   "id": "0894697002184",
+   "name": "NuttZo Organic 7 Nut & Seed Butter POWER FUEL Crunchy",
+   "brand": "NuttZo",
+   "category": "Spreads",
+   "quantity": "737g",
+   "image": "https://images.openfoodfacts.org/images/products/089/469/700/2184/front_en.63.200.jpg",
+   "price": 4.57,
+   "unitPrice": {
+    "amount": 0.62,
+    "per": "100 g"
+   },
+   "onSale": true,
+   "stock": 23,
+   "ingredients": "dry roasted cashews, dry roasted almonds, dry roasted brazil nuts*, flax seeds*, chia seeds*, hazelnuts*, dry roasted pumpkin seeds, Sea salt",
+   "allergens": [
+    "nuts"
+   ],
+   "traces": [],
+   "labels": [
+    "organic",
+    "kosher",
+    "no gmos",
+    "usda organic",
+    "no added sugar",
+    "non gmo project"
+   ],
+   "nutriScore": "A",
+   "per100g": {
+    "kcal": 562.5,
+    "sugars": 3.03030303030303,
+    "salt": 0.4925,
+    "protein": 18.1818181818182
+   }
+  },
+  {
+   "id": "0051500255377",
+   "name": "Extra Crunchy Peanut Butter",
+   "brand": "Jif",
+   "category": "Spreads",
+   "quantity": "16 oz (1 lb) 454 g",
+   "image": "https://images.openfoodfacts.org/images/products/005/150/025/5377/front_en.70.200.jpg",
+   "price": 6.38,
+   "unitPrice": {
+    "amount": 1.41,
+    "per": "100 g"
+   },
+   "onSale": false,
+   "stock": 25,
+   "ingredients": "ROASTED PEANUTS, SUGAR, 2% MOLASSES, FULL HYDROGENATED VEGETABLE OILS (RAPESEED, SOYBEAN), MONO AND DIGLYCERIDES, SALT.",
+   "allergens": [
+    "peanuts",
+    "soybeans"
+   ],
+   "traces": [],
+   "labels": [
+    "no artificial preservatives",
+    "no gmos"
+   ],
+   "nutriScore": "C",
+   "per100g": {
+    "kcal": 593.75,
+    "sugars": 9.09090909090909,
+    "salt": 0.833333333333333,
+    "protein": 21.2121212121212
+   }
   }
  ]
 }

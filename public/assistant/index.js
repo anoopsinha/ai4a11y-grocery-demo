@@ -5,7 +5,8 @@
 //      (needs such as readAloud, readAloudRate, textSize) is the source of
 //      truth for how the assistant speaks and shows itself.
 //   2. The toolkit's building blocks do the voice: speech.say() for replies
-//      (the profile's speaking rate wins) and speech.listen() for the mic.
+//      (the profile's speaking rate wins); the microphone is listen.js, dictation
+//      with interim results so the person can talk over the assistant.
 //   3. The brain (brain.js) understands set phrases; a model (model.js) takes
 //      what they miss, when one is reachable.
 import { createToolkit } from '../vendor/toolkit/index.js';
@@ -18,6 +19,7 @@ import { createBrain, HELP } from './brain.js';
 import { createModel } from './model.js';
 import { createSpeaker } from './speak.js';
 import { createEarcon } from './earcon.js';
+import { createListener } from './listen.js';
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -72,39 +74,71 @@ function speak(text) {
   speaker.say(text);
 }
 
-// Did the microphone just hear the assistant's own voice? Most of the words
-// heard are in what is being (or was just) said.
+// Barge-in. The microphone stays on while the assistant talks. What it hears
+// then is partly the assistant's own voice: a word is an echo when it is in
+// what is being said. The first words that are not echo stop the voice at
+// once (from an interim result), and the final sentence is handled with its
+// leading echo words dropped.
 let lastSaid = '';
-const wordsOf = (t) => new Set(String(t).toLowerCase().replace(/[^a-z0-9' ]/g, ' ').split(/\s+/).filter((w) => w.length > 1));
-function isEcho(heard) {
-  const h = [...wordsOf(heard)];
-  if (!h.length) return true;
-  const said = wordsOf(lastSaid);
-  const hits = h.filter((w) => said.has(w)).length;
-  return hits / h.length >= 0.6 && (speaker.speaking || h.length >= 3);
+let heardWhileSpeaking = false; // did this sentence begin while the assistant was talking?
+const wordsOf = (t) => String(t).toLowerCase().replace(/[^a-z0-9' ]/g, ' ').split(/\s+/).filter((w) => w.length > 1);
+// How many words at the start of what was heard are the assistant's own, in
+// the order it said them (one dropped or extra word allowed, as recognizers do).
+function echoLength(heard, said) {
+  let best = 0;
+  for (let start = 0; start < said.length; start++) {
+    if (said[start] !== heard[0]) continue;
+    let i = 0, j = start, slack = 0;
+    while (i < heard.length && j < said.length) {
+      if (heard[i] === said[j]) { i++; j++; slack = 0; }
+      else if (said[j + 1] === heard[i] && slack < 1) { j += 2; i++; slack++; }
+      else if (heard[i + 1] === said[j] && slack < 1) { i++; slack++; }
+      else break;
+    }
+    best = Math.max(best, i);
+  }
+  return best;
 }
+// The person's own words out of a sentence that began as echo.
+function ownWords(heard) {
+  const h = wordsOf(heard);
+  return h.slice(echoLength(h, wordsOf(lastSaid))).join(' ');
+}
+const isEcho = (heard) => !ownWords(heard);
 
 function micOn({ quiet = false } = {}) {
   if (listening?.listening) return;
-  listening = s.speech.listen({
-    feedback: 'none',
-    commands: { 'stop': () => stopSpeaking(), 'stop listening': () => micOff() },
-    onUnknown: (heard) => {
-      if (isEcho(heard)) return;
-      stopSpeaking(); // barge-in: the person's words win
-      submit(heard);
+  stopSpeaking(); // pressing Voice while it talks means: my turn
+  listening = createListener({
+    onInterim: (text) => {
+      if (!speaker.speaking) return;
+      heardWhileSpeaking = true;
+      // Two words of their own and the assistant yields.
+      if (wordsOf(ownWords(text)).length >= 2) { stopSpeaking(); status('Go on.'); }
     },
+    onFinal: (text) => {
+      const own = heardWhileSpeaking || speaker.speaking ? ownWords(text) : text;
+      heardWhileSpeaking = false;
+      if (!own.trim()) return;
+      const t = own.trim().toLowerCase().replace(/[.,!?]/g, '');
+      if (/^(stop|stop talking|be quiet|quiet)$/.test(t)) { stopSpeaking(); return; }
+      if (/^stop listening$/.test(t)) { micOff(); return; }
+      stopSpeaking();
+      submit(own);
+    },
+    onStop: (why) => { listening = null; $('mic').setAttribute('aria-pressed', 'false'); $('mic').textContent = 'Voice'; if (why) status(why); },
   });
   if (!listening.supported) { listening = null; status('This browser has no speech recognition. Chrome and Edge do.'); return; }
+  listening.start();
   $('mic').setAttribute('aria-pressed', 'true'); $('mic').textContent = 'Stop listening';
-  if (!quiet) status('Listening. Say what you need, or stop listening.');
+  if (!quiet) status('Listening. Say what you need. Say stop, or talk over me, to interrupt.');
 }
 function micOff({ quiet = false } = {}) {
-  listening?.stop();
+  const l = listening;
   listening = null;
-  if (quiet) return;
+  l?.stop();
   $('mic').setAttribute('aria-pressed', 'false'); $('mic').textContent = 'Voice';
-  status('Microphone off.');
+  if (!quiet) status('Microphone off.');
 }
 
 // ── 3. The brain and the model ───────────────────────────────────────────────
@@ -210,4 +244,4 @@ lastSaid = HELP;
 let wasOpen = true;
 try { wasOpen = localStorage.getItem('greenbasket-assistant') !== 'closed'; } catch {}
 if (wasOpen) open(true);
-window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, isEcho };
+window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, isEcho, ownWords };

@@ -56,9 +56,10 @@ few at a time: *more* continues.
 one, the toolkit's speech block speaks with the best voice the browser has.
 A reply is fetched in pieces so the first sentence starts sooner. You can
 interrupt at any time: start talking (the microphone stays on while the
-assistant speaks, and what it hears of the assistant's own voice is
-ignored), say *stop*, press **Stop speaking**, press Escape, or start
-typing. A small two-note sound plays while the assistant waits on the
+assistant speaks; what it hears of the assistant's own voice is recognised
+as an in-order run of the reply's words and dropped, and two words of your
+own stop the voice at once), say *stop*, press **Stop speaking**, press
+Escape, or start typing. A small two-note sound plays while the assistant waits on the
 model, with a soft tick while it is still waiting, and a short note when
 the answer arrives.
 
@@ -69,10 +70,12 @@ runs in the browser, over a localStorage port
 assistant keeps how it should speak and show itself: *read replies aloud*,
 *speak slower* and *bigger text* write needs (`readAloud`, `readAloudRate`,
 `textSize`) to the profile, and the page renders them with the toolkit's web
-surface. The voice is the toolkit's speech building blocks: `speech.say()`
-for replies, where the profile's speaking rate wins over the page's default,
-and `speech.listen()` for the microphone, with the toolkit's own listening
-indicator. The toolkit is vendored as a packed tarball in `vendor/`
+surface. The spoken replies go through the toolkit's speech block
+(`speech.say()`) when there is no speech model, and the profile's speaking
+rate applies either way. The microphone is the page's own
+(`public/assistant/listen.js`): dictation with interim results, which the
+toolkit's command listener does not give and barge-in needs. The toolkit is
+vendored as a packed tarball in `vendor/`
 (`npm run vendor` repacks it from a checkout next to this one; `vendor/PIN.txt`
 says which commit).
 

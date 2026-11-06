@@ -50,6 +50,9 @@ await check('shop for it', (s) => /Added 6 products, one of each: .*Fettuccine, 
 await check('yes', /Which one\?/);
 await check('details on the fettuccine', (s) => /Fettuccine.*Allergens.*Anything else/s.test(s));
 await check('no', /Okay/);
+await check('what is in the alfredo sauce', /Alfredo sauce.*Ingredients/s);
+await check('what is in the broccoli crowns', /Broccoli crown/);
+await check('what do I need for dinner', /Which meal\?/);
 await check('what do I need for chicken tacos', /12 ingredients/);
 await check('add all of those to my cart', (s) => /Added \d+ products/.test(s) && /Already had/.test(s));
 await check('shop for chicken alfredo and chicken tacos for 3 days', (s) => /for 3 days/.test(s) && /shared/.test(s) && /Already had/.test(s) && /asked for 3 days, so you may want one more meal/.test(s));

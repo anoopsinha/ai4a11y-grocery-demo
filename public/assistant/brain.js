@@ -122,10 +122,11 @@ export function createBrain({ store, profile = null, model = null, speech = null
       const add = /^(shop|buy|get|add|put|order|fill|plan|purchase|grab|pick up)\b|\b(to|in|into) (my |the )?cart\b|\b(add|buy|get|shop) (them|those|everything|all|it|the ingredients)\b/.test(t);
       return { type: 'meal', meals: picked.map((r) => r.name), days, add };
     }
-    if (/^(what|which) (do i need|ingredients|is needed|goes in|is in)|^(ingredients|shopping list) for|^(can i|could i) (make|cook)|^(do you have|have you got) (everything|all|what i need|the ingredients)|^(shop|buy|get|plan|order) (for )?(dinner|lunch|meals|a meal|three days|3 days)/.test(t)) return { type: 'meal', meals: [], days: null, add: false };
     if (/^what('s| is) (that|it|this)\??$|^(details|more details|tell me more)$/.test(t)) return { type: 'details', query: '' };
     // Details on a product.
     if ((m = /^(?:details|detail|tell me (?:more )?about|more about|more on|what(?:'s| is) in|what are the ingredients (?:of|in)|ingredients (?:of|in|for)|allergens (?:in|of)|describe|info on|information (?:on|about)|what about|how about)(?: on| about| of| for)?(?: the| a| an| some| that| this)? (.+)$|^(?:does|do) (?:the )?(?!you\b)(.+?) (?:have|contain) (.+)$|^is (?:the )?(.+?) (?:gluten free|vegan|dairy free|nut free|organic|on sale|in stock)\??$|^(?:the )?(.+?) details$/.exec(t))) return { type: 'details', query: m[1] || m[2] || m[4] || m[5] };
+    // A meal question that names no meal the store knows.
+    if (/^(what|which) (do i need|ingredients|is needed)|^(ingredients|shopping list) for (dinner|lunch|a meal|tonight)|^(can i|could i) (make|cook)|^(do you have|have you got) (everything|all|what i need|the ingredients)|^(shop|buy|get|plan|order) (for )?(dinner|lunch|meals|a meal|three days|3 days)|^what (can|should) i (make|cook)/.test(t)) return { type: 'meal', meals: [], days: null, add: false };
     // Substitutes.
     if ((m = /^(?:is there |do you have |got )?(?:a |an |any )?(substitute|alternative|replacement|something else|something similar)(?: for| to| instead of)? (.+)$|^what can i use instead of (.+)$|^instead of (.+?)(?: what)?$/.exec(t))) return { type: 'substitute', query: m[2] || m[3] || m[4] };
     // Cart edits.

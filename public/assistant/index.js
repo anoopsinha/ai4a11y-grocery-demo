@@ -74,43 +74,16 @@ function speak(text) {
   speaker.say(text);
 }
 
-// Barge-in. The microphone stays on while the assistant talks. What it hears
-// then is partly the assistant's own voice: a word is an echo when it is in
-// what is being said. The first words that are not echo stop the voice at
-// once (from an interim result), and the final sentence is handled with its
-// leading echo words dropped.
+// Barge-in by wake phrase. The microphone stays on while the assistant
+// talks, but then it listens for one thing only: "hey assistant". Both words
+// together stop the voice; anything else heard meanwhile (mostly the
+// assistant's own voice) is ignored and the reply plays to the end. What
+// follows the wake phrase in the same breath is handled as the request.
+const WAKE = /\b(?:hey|hi|hay|a|okay|ok)\s*,?\s*(?:assistant|assistance|assistent)\b[,.!?]?\s*/i;
 let lastSaid = '';
 let heardWhileSpeaking = false; // did this sentence begin while the assistant was talking?
-const wordsOf = (t) => String(t).toLowerCase().replace(/[^a-z0-9' ]/g, ' ').split(/\s+/).filter((w) => w.length > 1);
-// How many words at the start of what was heard are the assistant's own, in
-// the order it said them (one dropped or extra word allowed, as recognizers do).
-function echoLength(heard, said) {
-  let best = 0;
-  for (let start = 0; start < said.length; start++) {
-    if (said[start] !== heard[0]) continue;
-    let i = 0, j = start, slack = 0;
-    while (i < heard.length && j < said.length) {
-      if (heard[i] === said[j]) { i++; j++; slack = 0; }
-      else if (said[j + 1] === heard[i] && slack < 1) { j += 2; i++; slack++; }
-      else if (heard[i + 1] === said[j] && slack < 1) { i++; slack++; }
-      else break;
-    }
-    best = Math.max(best, i);
-  }
-  return best;
-}
-// The person's own words out of a sentence that began as echo.
-function ownWords(heard) {
-  const h = wordsOf(heard);
-  return h.slice(echoLength(h, wordsOf(lastSaid))).join(' ');
-}
-const isEcho = (heard) => !ownWords(heard);
-// Words of their own that are not anywhere in the reply: the sure sign a
-// person is talking, since a misheard echo still uses the reply's words.
-function novelWords(heard) {
-  const said = new Set(wordsOf(lastSaid));
-  return wordsOf(ownWords(heard)).filter((w) => !said.has(w));
-}
+let woke = false;               // the wake phrase was heard during this sentence
+const afterWake = (text) => { const m = WAKE.exec(text); return m ? text.slice(m.index + m[0].length).trim() : null; };
 
 function micOn({ quiet = false } = {}) {
   if (listening?.listening) return;
@@ -119,30 +92,28 @@ function micOn({ quiet = false } = {}) {
     onInterim: (text) => {
       if (!speaker.speaking) return;
       heardWhileSpeaking = true;
-      // Two words that are not in the reply at all, or a plain "stop", and the assistant yields.
-      if (novelWords(text).length >= 2 || /\bstop\b\s*$/i.test(text)) { stopSpeaking(); status('Go on.'); }
+      if (!woke && WAKE.test(text)) { woke = true; stopSpeaking(); status('Yes?'); }
     },
     onFinal: (text) => {
       const during = heardWhileSpeaking || speaker.speaking;
       heardWhileSpeaking = false;
-      const own = during ? ownWords(text) : text;
-      if (!own.trim()) return;
-      const t = own.trim().toLowerCase().replace(/[.,!?]/g, '');
-      if (/(^|\s)(stop|stop talking|be quiet|quiet)$/.test(t)) { stopSpeaking(); return; }
+      const wokeNow = woke || WAKE.test(text);
+      woke = false;
+      if (during && !wokeNow) return;                  // the assistant's own voice, or talk not meant for it
+      const rest = wokeNow ? (afterWake(text) ?? '') : text;
+      if (wokeNow) stopSpeaking();
+      const t = rest.trim().toLowerCase().replace(/[.,!?]/g, '');
+      if (!t) { status('Yes?'); return; }               // "hey assistant" alone: waiting for the request
       if (/^stop listening$/.test(t)) { micOff(); return; }
-      // Heard over the assistant's voice: only a clearly new sentence, or a
-      // simple phrase such as yes, no or shop for it, counts; a misheard
-      // echo is dropped.
-      if (during && novelWords(text).length < 1 && !brain.simple(own)) return;
-      stopSpeaking();
-      submit(own);
+      if (/^(stop|stop talking|be quiet|quiet)$/.test(t)) { stopSpeaking(); return; }
+      submit(rest);
     },
     onStop: (why) => { listening = null; $('mic').setAttribute('aria-pressed', 'false'); $('mic').textContent = 'Voice'; if (why) status(why); },
   });
   if (!listening.supported) { listening = null; status('This browser has no speech recognition. Chrome and Edge do.'); return; }
   listening.start();
   $('mic').setAttribute('aria-pressed', 'true'); $('mic').textContent = 'Stop listening';
-  if (!quiet) status('Listening. Say what you need. Say stop, or talk over me, to interrupt.');
+  if (!quiet) status('Listening. Say what you need. While I am talking, say "hey assistant" to interrupt.');
 }
 function micOff({ quiet = false } = {}) {
   const l = listening;
@@ -255,4 +226,4 @@ lastSaid = HELP;
 let wasOpen = true;
 try { wasOpen = localStorage.getItem('greenbasket-assistant') !== 'closed'; } catch {}
 if (wasOpen) open(true);
-window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, isEcho, ownWords, novelWords };
+window.greenbasket.assistant = { submit, brain, profile, librarian, model, open, speaker, earcon, afterWake };

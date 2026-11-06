@@ -54,12 +54,13 @@ few at a time: *more* continues.
 (voice `Sulafat` on `gemini-3.8-flash-lite-tts`; both can be changed in
 `.env`, and `GEMINI_TTS_MODEL=off` keeps the browser's own voices). Without
 one, the toolkit's speech block speaks with the best voice the browser has.
-A reply is fetched in pieces so the first sentence starts sooner. You can
-interrupt at any time: start talking (the microphone stays on while the
-assistant speaks; what it hears of the assistant's own voice is recognised
-as an in-order run of the reply's words and dropped; two words that are not
-in the reply at all stop the voice at once), say *stop*, press **Stop speaking**, press
-Escape, or start typing. A small two-note sound plays while the assistant waits on the
+A reply is fetched in pieces so the first sentence starts sooner. The
+microphone stays on while the assistant talks, but then it listens for one
+thing only: *hey assistant*. Both words together stop the voice, and
+whatever follows in the same breath ("hey assistant, add two avocados") is
+the request. Anything else it hears meanwhile, mostly its own voice, is
+ignored and the reply plays to the end. You can also press **Stop
+speaking**, press Escape, or start typing. A small two-note sound plays while the assistant waits on the
 model, with a soft tick while it is still waiting, and a short note when
 the answer arrives.
 

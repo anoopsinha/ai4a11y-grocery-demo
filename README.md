@@ -10,6 +10,11 @@ chicken alfredo and chicken tacos, with ingredients that several meals share.
 > place to try adaptations, and it does not show that they work on a real
 > store.
 
+![The Greenbasket store with the assistant sidebar open. The store shows chicken products; the sidebar lists the products it just added for chicken tacos, each with an Add button, and answers "which of those have dairy in them?" by naming the shredded cheese.](docs/screenshot.png)
+
+*The store with the assistant open: it has just shopped for chicken tacos
+and answered a question about dairy. You can type, or press Voice and talk.*
+
 ## Try it
 
 The store is online at

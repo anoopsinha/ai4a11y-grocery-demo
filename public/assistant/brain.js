@@ -3,13 +3,19 @@
 // (products, meals, the cart and a few actions) and a `profile` (the toolkit's
 // needs), so it also runs in Node for the tests.
 //
-//   sentence ──▶ parse() (set phrases, always) ──hit──▶ intent ──▶ execute()
-//                   │ miss
-//                   ▼ (a model, when the page has one)
-//             model.resolve(sentence) ──▶ intent ──▶ execute()
-//                   │ none
+//   sentence ──▶ parse() ──exact, simple phrase──▶ intent ──▶ execute()
+//                   │ anything else, when the page has a model
 //                   ▼
-//             "I didn't follow that", with what it can do
+//             model.resolve(sentence) ──▶ intent ──▶ execute()
+//                   │ no model, or it failed
+//                   ▼
+//             the set phrases as the fallback, else "I didn't follow that"
+//
+// Simple means: the whole sentence is one of the fixed phrases (yes, no,
+// more, stop, help, undo, the cart, the order, shop for it, the voice and
+// text settings), or a short command of a few words such as "add two
+// avocados" or "details on the salsa". Longer or less usual wording is the
+// model's to understand.
 //
 // Replies are plain sentences made to be spoken as well as read. A reply may
 // carry `products` for the page to show as cards. State-changing steps that
@@ -419,14 +425,22 @@ export function createBrain({ store, profile = null, model = null, speech = null
     return { say: said.join(' '), speak: !changes.some((c) => c.dimension === 'readAloud' && c.value === false) };
   }
 
+  // Is this one of the fixed phrases, or a short command? Those the set
+  // phrases answer themselves; the model gets everything else.
+  const SIMPLE = new Set(['yes', 'no', 'more', 'help', 'stop', 'undo', 'cart', 'clear', 'checkout', 'meals', 'ask-details', 'ask-more']);
+  function isSimple(intent, text) {
+    if (!intent || intent.weak) return false;
+    if (SIMPLE.has(intent.type) || intent.type === 'profile') return true;
+    if (intent.type === 'meal' && intent.add && intent.meals.length && !intent.days) return words(text).length <= 4 + intent.meals.length * 2; // "shop for it", "shop for chicken tacos"
+    if (['add', 'remove', 'find', 'details', 'substitute'].includes(intent.type)) return words(text).length <= 4;
+    return false;
+  }
+
   async function handle(text) {
     const t = String(text || '').trim();
     if (!t) return null;
     let intent = parse(t);
-    // A long, wordy "find" or "add" ("anything with no nuts I can snack on") is
-    // a question for the model, when there is one; the set phrase is the fallback.
-    const wordy = intent && (intent.weak || ((intent.type === 'find' || intent.type === 'add') && words(intent.query || intent.items[0].query).length >= 4));
-    if ((!intent || wordy) && model?.available?.()) {
+    if (!isSimple(intent, t) && model?.available?.()) {
       try { intent = (await model.resolve(t, context())) || intent; } catch (e) { if (!intent) return { say: `The model did not answer (${e.message}). ${HELP}` }; }
     }
     if (!intent) intent = { type: 'none', say: `I did not follow "${t}". ${HELP}` };

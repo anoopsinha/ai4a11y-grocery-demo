@@ -92,13 +92,21 @@ const fakeModel = {
     return validate(JSON.parse(canned[key] || '{"type":"none","say":"I am not sure."}'));
   },
 };
-const brain2 = createBrain({ store: fakeStore(), profile, model: fakeModel });
+let modelCalls = 0;
+const counted = { ...fakeModel, resolve: (...a) => { modelCalls++; return fakeModel.resolve(...a); } };
+const brain2 = createBrain({ store: fakeStore(), profile, model: counted });
 const check2 = async (text, expect) => { const r = await brain2.handle(text); const ok = expect.test(r.say); if (!ok) failed++; console.log(`${ok ? 'ok  ' : 'FAIL'} [model] "${text}" -> ${r.say.slice(0, 110)}`); };
 await check2('Which cheeses cost less than four dollars?', /Three cheeses/);
 await check2('is there anything with no nuts I can snack on?', /pretzel/i);
 await check2('bring me a pound of ground beef and some buns', /Added .*Ground beef.*bun/i);
 await check2('nonsense from the model', /did not follow/);
-await check2('add avocados', /Added Avocado/);   // a set phrase never waits for the model
+await check2('add avocados', /Added Avocado/);   // a simple phrase never waits for the model
+// Simple phrases skip the model; anything longer or unusual goes to it.
+const before = modelCalls;
+for (const t of ['yes', 'more', 'what is in my cart', 'read replies aloud', 'add two avocados', 'details on the salsa', 'shop for chicken tacos', 'shop for it', 'undo']) await brain2.handle(t);
+if (modelCalls !== before) { failed++; console.log(`FAIL simple phrases went to the model (${modelCalls - before} calls)`); } else console.log('ok   simple phrases skip the model');
+for (const t of ['what do I need for chicken alfredo', 'could you tell me whether there is any salmon', 'what kind of butter does chicken alfredo call for']) await brain2.handle(t);
+if (modelCalls !== before + 3) { failed++; console.log(`FAIL longer phrases did not all go to the model (${modelCalls - before} of 3)`); } else console.log('ok   longer phrases go to the model');
 const p1 = buildPrompt('x', brain2.context(), []);
 console.log(`prompt: ${p1.length} characters, about ${Math.round(p1.length / 4)} tokens`);
 

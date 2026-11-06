@@ -79,10 +79,13 @@ vendored as a packed tarball in `vendor/`
 (`npm run vendor` repacks it from a checkout next to this one; `vendor/PIN.txt`
 says which commit).
 
-**Set phrases first, a model second.** `public/assistant/brain.js` understands
-the phrases above with no model and no network, and it is what `npm test`
-checks. A sentence it does not understand goes to a model when one is
-reachable: on your own computer, put a Google AI key in `.env`
+**Simple phrases by rule, the rest by model.** `public/assistant/brain.js`
+answers exact simple phrases itself, with no model and no network: yes, no,
+more, stop, undo, the cart, the order, the voice and text settings, and
+short commands of a few words such as *add two avocados* or *details on the
+salsa*. Everything else goes to a model when one is reachable, which is the
+usual case; without a model the same rules understand the longer phrases
+above as a fallback, and that is what `npm test` checks. The model: on your own computer, put a Google AI key in `.env`
 (`GEMINI_API_KEY`, see `.env.example`) and the server makes the call, so the
 key never reaches the browser; on the hosted page, the sidebar's **Model**
 section takes a key that stays in that browser. The model sees the shelves,
